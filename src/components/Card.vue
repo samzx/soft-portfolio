@@ -85,7 +85,7 @@ export default {
 
 <style scoped>
 .card {
-  width: 960px;
+  width: var(--desktop-width);
   background: radial-gradient(118.99% 670.46% at -7.06% -9.5%, #FFFFFF 0%, #F1F1F1 100%);
   box-shadow: 20px 20px 60px rgba(0, 0, 0, 0.05), -20px -20px 60px rgba(255, 255, 255, 0.66);
   border-radius: 20px;
@@ -108,7 +108,7 @@ export default {
 
 .contents {
   display: flex;
-  padding: 64px 48px;
+  padding: 64px var(--desktop-padding-width);
   /* height: 100%; */
 }
 
@@ -121,6 +121,7 @@ export default {
 
 h1 {
   font-size: 36px;
+  margin-top: 0px;
 }
 h2 {
   font-size: 18px;
@@ -203,24 +204,41 @@ img:active {
 }
 @media screen and (max-width: 980px) {
   .contents {
-    padding: 40px 20px;
-    width: 360px;
+    padding: 40px var(--tablet-padding-width);
+    width: calc(var(--tablet-width) - var(--tablet-padding-width) * 2);
     margin: 0;
   }
   .left {
-    width: 360px;
+    width: calc(var(--tablet-width) - var(--tablet-padding-width) * 2);
   }
   .card {
-    width: 400px;
+    width: var(--tablet-width);
   }
   .VueCarousel {
-    width: 360px;
-    height: 198px;
+    width: calc(var(--tablet-width) - var(--tablet-padding-width) * 2);
+    height: calc((var(--tablet-width) - var(--tablet-padding-width) * 2) * 8.8 / 16);
     margin: 20px 0px;
   }
   .copy-description {
     margin-bottom: 0;
     margin-top: 32px
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .contents {
+    padding: 40px var(--mobile-padding-width);
+    width: calc(var(--mobile-width) - var(--mobile-padding-width) * 2);
+  }
+  .left {
+    width: calc(var(--mobile-width) - var(--mobile-padding-width) * 2);
+  }
+  .card {
+    width: var(--mobile-width);
+  }
+  .VueCarousel {
+    width: calc(var(--mobile-width) - var(--mobile-padding-width) * 2);
+    height: calc((var(--mobile-width) - var(--mobile-padding-width) * 2) * 8.8 / 16);
   }
 }
 

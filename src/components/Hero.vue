@@ -29,19 +29,35 @@ export default {
   background-position: 50%;
   height: 800px;
   width: 100%;
-  min-width: 400px;
+  min-width: var(--mobile-width);
   margin: auto;
+
+  /* Responsive */
+  height: 100vh;
+  min-height: 600px;
+  max-height: 1440px;
 }
 
 .container {
   max-width: 980px;
   margin: auto;
-  padding-top: 180px;
+  /* padding-top: 180px; */
+
+/* Responsive */
+  height: 100vh;
+  min-height: 600px;
+  max-height: 1440px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .text-container {
   width: 380px;
   margin: 10px;
+
+  /* Responsive */
+  margin-top: -20px;
 }
 
 .social-links {
@@ -68,9 +84,6 @@ h2 {
 }
 
 @media screen and (max-width: 980px) {
-  .container {
-    padding-top: 120px;
-  }
   .background {
     background-position: 54% 0px;
     background-size: inherit;
@@ -80,7 +93,7 @@ h2 {
   }
 
   .text-container {
-    width: 360px;
+    width: calc(var(--mobile-width) - var(--mobile-padding-width) * 2);
     margin: auto;
   }
 }

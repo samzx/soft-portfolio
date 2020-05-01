@@ -120,6 +120,16 @@ export default {
 </script>
 
 <style>
+
+:root {
+  --mobile-width: 375px;
+  --mobile-padding-width: 20px;
+  --tablet-width: 600px;
+  --tablet-padding-width: 20px;
+  --desktop-width: 980px;
+  --desktop-padding-width: 48px;
+}
+
 html {
   /* font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI',
     Roboto, 'Helvetica Neue', Arial, sans-serif; */
@@ -180,7 +190,7 @@ a {
   transition: 0.2s transform ease-out;
 }
 .cards {
-  margin-top: -80px;
+  margin-top: -60px;
 }
 
 </style>

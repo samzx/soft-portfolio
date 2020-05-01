@@ -18,9 +18,9 @@ export default {
 
 <style scoped>
 .footer {
-  max-width: 960px;
+  width: calc(var(--desktop-width) - var(--desktop-padding-width) * 2);
   margin: 64px auto;
-  padding: 0px 48px;
+  padding: 0px var(--desktop-padding-width);
   display: flex;
   font-size: 18px;
   font-weight: bold;
@@ -35,7 +35,13 @@ export default {
 @media screen and (max-width: 980px) {
   .footer {
     padding: 0px 20px;
-    width: 360px;
+    width: calc(var(--tablet-width) - var(--tablet-padding-width) * 2);
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .footer {
+    width: calc(var(--mobile-width) - var(--mobile-padding-width) * 2);
   }
 }
 
