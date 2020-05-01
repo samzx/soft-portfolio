@@ -35,7 +35,7 @@ export default {
 @media screen and (max-width: 980px) {
   .footer {
     padding: 0px 20px;
-    width: 400px;
+    width: 360px;
   }
 }
 

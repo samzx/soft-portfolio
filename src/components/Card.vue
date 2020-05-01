@@ -204,7 +204,7 @@ img:active {
 @media screen and (max-width: 980px) {
   .contents {
     padding: 40px 20px;
-    width: 400px;
+    width: 360px;
     margin: 0;
   }
   .left {
