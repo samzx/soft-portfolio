@@ -53,7 +53,7 @@ export default {
 }
 
 .text-container {
-  width: 380px;
+  width: 360px;
   margin: 10px;
 
   /* Responsive */

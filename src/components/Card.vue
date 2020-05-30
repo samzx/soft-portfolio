@@ -18,14 +18,14 @@
           <a
             v-if="links.primary"
             class="button primary"
-            :style="{'--button-color': links.color}"
+            :style="{'--primary-color': links.color}"
             v-bind:href="links.primary.url"
             target="_blank"
           >{{links.primary.name}}</a>
           <a
             v-if="links.secondary"
             class="button secondary"
-            :style="{'--button-color': links.color}"
+            :style="{'--primary-color': links.color}"
             v-bind:href="links.secondary.url"
             target="_blank"
           >{{links.secondary.name}}</a>
@@ -87,7 +87,7 @@ export default {
 .card {
   width: var(--desktop-width);
   background: radial-gradient(118.99% 670.46% at -7.06% -9.5%, #FFFFFF 0%, #F1F1F1 100%);
-  box-shadow: 20px 20px 60px rgba(0, 0, 0, 0.05), -20px -20px 60px rgba(255, 255, 255, 0.66);
+  box-shadow: 20px 20px 60px rgba(0, 0, 0, 0.05), -20px -20px 60px rgba(255, 255, 255, 0.8);
   border-radius: 20px;
   margin: auto;
   position: relative;
@@ -104,6 +104,7 @@ export default {
 
 .copy-description {
   margin: 20px 0px;
+  line-height: 1.47059;
 }
 
 .contents {
@@ -124,8 +125,8 @@ h1 {
   margin-top: 0px;
 }
 h2 {
-  font-size: 18px;
-  color: #555;
+  font-size: 16px;
+  color: #888;
   margin-bottom: 8px;
 }
 p {
@@ -170,13 +171,13 @@ p {
 }
 
 .button.secondary {
-  color: var(--button-color);
+  color: var(--primary-color);
   background: #fafafa;
   box-shadow: -4px -4px 10px rgba(255, 255, 255, 0.8), 4px 4px 10px rgba(0, 0, 0, 0.05);
 }
 
 .button.primary {
-  background: var(--button-color);
+  background: var(--primary-color);
   box-shadow: -4px -4px 10px rgba(255, 255, 255, 0.5), 4px 4px 10px rgba(0, 0, 0, 0.1);
   color: white;
   transition: 0.3s box-shadow ease-in-out;
@@ -196,9 +197,10 @@ img:active {
 }
 
 .VueCarousel {
-  box-shadow: -10px -10px 30px rgba(255, 255, 255, 0.15), 10px 10px 30px rgba(0, 0, 0, 0.05);
+  box-shadow: -10px -10px 30px rgba(255, 255, 255, 0.8), 10px 10px 30px rgba(0, 0, 0, 0.05);
   border-radius: 10px;
   overflow: hidden;
+  /* 155px if no description */
   height: 275px;
   width: 500px;
 }
