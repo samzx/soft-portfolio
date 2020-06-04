@@ -254,8 +254,12 @@ img:active {
   /* height: 5px !important;
   width: 20px !important;
   border-radius: 20px !important; */
+  margin-top: 0px !important;
   outline: none !important;
   transition: 0.3s background-color ease-in-out;
+}
+.VueCarousel-dot-container {
+  margin-top: 0px !important;
 }
 .VueCarousel-dot--active {
   /* background-color:#555 !important; */
