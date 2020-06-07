@@ -1,48 +1,52 @@
 <template>
-  <div class="footer">
-    <p class="author">{{author}}</p>
+  <app-footer>
+    <author>{{author}}</author>
     <p v-for="(link, index) in links" :key="`product-desctiption-${index}`">
-        <a class="linked" target="_blank" v-bind:href="link.url">{{link.name}}</a><span class="slash" v-if="index != links.length - 1">/</span>
+        <linked target="_blank" v-bind:href="link.url">{{link.name}}</linked><slash v-if="index != links.length - 1">/</slash>
     </p>
-  </div>
+  </app-footer>
 </template>
 
 <script>
+import styled from 'vue-styled-components'
+import { Linked } from './styles/Text.ts'
+
+const AppFooter = styled.div`
+  width: ${({theme}) => theme.screen.width.desktop - theme.screen.padding.desktop * 2}px;
+  margin: 64px auto;
+  padding: 0px ${({theme}) => theme.screen.padding.desktop};
+  display: flex;
+  font-size: 18px;
+  font-weight: bold;
+
+  @media screen and (max-width: ${({theme}) => `${theme.screen.width.desktop}px`}) {
+    padding: 0px 20px;
+    width: ${({theme}) => theme.screen.width.tablet - theme.screen.padding.tablet * 2}px;
+  }
+
+  @media screen and (max-width: ${({theme}) => `${theme.screen.width.tablet}px`}) {
+    width: ${({theme}) => theme.screen.width.mobile - theme.screen.padding.mobile * 2}px;
+  }
+`
+
+const Author = styled.p`
+  margin-right: 36px;
+`
+
+const Slash = styled.span`
+  margin: 0 8px;
+`
+
 export default {
+  components: {
+    Linked,
+    AppFooter,
+    Author,
+    Slash
+  },
   props: {
     author: String,
     links: Array
   }
 }
 </script>
-
-<style scoped>
-.footer {
-  width: calc(var(--desktop-width) - var(--desktop-padding-width) * 2);
-  margin: 64px auto;
-  padding: 0px var(--desktop-padding-width);
-  display: flex;
-  font-size: 18px;
-  font-weight: bold;
-}
-.author {
-  margin-right: 36px;
-}
-.slash {
-  margin: 0 8px;
-}
-
-@media screen and (max-width: 980px) {
-  .footer {
-    padding: 0px 20px;
-    width: calc(var(--tablet-width) - var(--tablet-padding-width) * 2);
-  }
-}
-
-@media screen and (max-width: 600px) {
-  .footer {
-    width: calc(var(--mobile-width) - var(--mobile-padding-width) * 2);
-  }
-}
-
-</style>

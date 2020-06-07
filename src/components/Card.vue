@@ -1,10 +1,10 @@
 <template>
-  <div class="card">
-    <div class="contents">
-      <div class="left">
-        <div class="copy">
-          <h2>{{accolade}}</h2>
-          <h1>{{name}}</h1>
+  <card>
+    <contents>
+      <left-container>
+        <div>
+          <subtitle>{{accolade}}</subtitle>
+          <product-title>{{name}}</product-title>
           <div v-if="windowWidth <= 980" class="carousel-container mobile">
             <carousel v-if="images" :perPage="1" :paginationActiveColor="links.color">
               <slide v-for="(image, index) in images" :key="index">
@@ -12,43 +12,224 @@
               </slide>
             </carousel>
           </div>
-          <p v-for="(text, index) in copy" :key="index" class="copy-description">{{text}}</p>
+          <paragraph v-for="(text, index) in copy" :key="index">{{text}}</paragraph>
         </div>
-        <div class="buttons">
-          <a
+        <button-container>
+          <styled-button
             v-if="links.primary"
-            class="button primary"
-            :style="{'--primary-color': links.color}"
+            primary
+            :color="links.color"
             v-bind:href="links.primary.url"
             target="_blank"
-          >{{links.primary.name}}</a>
-          <a
+          >{{links.primary.name}}</styled-button>
+          <styled-button
             v-if="links.secondary"
-            class="button secondary"
-            :style="{'--primary-color': links.color}"
+            secondary
+            :color="links.color"
             v-bind:href="links.secondary.url"
             target="_blank"
-          >{{links.secondary.name}}</a>
-        </div>
-      </div>
-      <div v-if="windowWidth > 980" class="carousel-container desktop">
-        <carousel v-if="images" :perPage="1" :paginationActiveColor="links.color">
+          >{{links.secondary.name}}</styled-button>
+        </button-container>
+      </left-container>
+      <carousel-container v-if="windowWidth > 980">
+        <styled-carousel v-if="images" :perPage="1" :paginationActiveColor="links.color">
           <slide v-for="(image, index) in images" :key="index">
-            <img v-bind:src="image"/>
+            <carousel-image v-bind:src="image"/>
           </slide>
-        </carousel>
-      </div>
-    </div>
-  </div>
+        </styled-carousel>
+      </carousel-container>
+    </contents>
+  </card>
 </template>
 
 <script>
-import { Carousel, Slide } from 'vue-carousel';
+import styled from 'vue-styled-components'
+import { Carousel, Slide } from 'vue-carousel'
+
+const Card = styled.div`
+  width: ${({theme}) => theme.screen.width.desktop}px;
+  background: radial-gradient(118.99% 670.46% at -7.06% -9.5%, #FFFFFF 0%, #F1F1F1 100%);
+  box-shadow: 20px 20px 60px rgba(0, 0, 0, 0.05), -20px -20px 60px rgba(255, 255, 255, 0.8);
+  border-radius: 20px;
+  margin: auto;
+  position: relative;
+  margin-bottom: 80px;
+  @media screen and (max-width: ${({theme}) => theme.screen.width.desktop}px) {
+    width: ${({theme}) => theme.screen.width.tablet}px;
+  }
+
+  @media screen and (max-width: ${({theme}) => theme.screen.width.tablet}px) {
+    width: ${({theme}) => theme.screen.width.mobile}px;
+  }
+`
+
+const Contents = styled.div`
+  display: flex;
+  padding: 64px ${({theme}) => theme.screen.padding.desktop}px;
+  /* height: 100%; */
+
+  @media screen and (max-width: ${({theme}) => theme.screen.width.desktop}px) {
+    padding: 40px ${({theme}) => theme.screen.padding.tablet}px;
+    width: ${({theme}) => theme.screen.width.tablet - theme.screen.padding.tablet * 2}px;
+    margin: 0;
+  }
+
+  @media screen and (max-width: ${({theme}) => theme.screen.width.tablet}px) {
+    padding: 40px ${({theme}) => theme.screen.padding.mobile}px;
+    width: ${({theme}) => theme.screen.width.mobile - theme.screen.padding.mobile * 2}px;
+  }
+`
+
+const LeftContainer = styled.div`
+  width: 320px;
+  margin-right: 10px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+
+  @media screen and (max-width: ${({theme}) => theme.screen.width.desktop}px) {
+    width: ${({theme}) => theme.screen.width.tablet - theme.screen.padding.tablet * 2}px;
+  }
+
+  @media screen and (max-width: ${({theme}) => theme.screen.width.tablet}px) {
+    width: ${({theme}) => theme.screen.width.mobile - theme.screen.padding.mobile * 2}px;
+  }
+`
+
+const ProductTitle = styled.h1`
+  font-size: 36px;
+  margin-top: 0px;
+`
+
+const Subtitle = styled.h2`
+  font-size: 16px;
+  color: #888;
+  margin-bottom: 8px;
+`
+
+const Paragraph = styled.p`
+  font-size: 18px;
+  margin: 20px 0px;
+  line-height: 1.47059;
+  @media screen and (max-width: ${({theme}) => theme.screen.width.desktop}px) {
+    margin-bottom: 0;
+    margin-top: 32px
+  }
+`
+
+const ButtonContainer = styled.div`
+  margin-top: 32px;
+`
+
+const btnProps = { primary: Boolean, secondary: Boolean, color: String }
+const StyledButton = styled('a', btnProps)`
+  padding: 10px 32px;
+  font-weight: bold;
+  margin-right: 20px;
+  font-size: 18px;
+  border-radius: 24px;
+  line-height: 40px;
+  color: ${(props) => props.primary ? 'white' : props.secondary ? props.color : 'black'};
+  background: ${(props) => props.primary ? props.color : props.secondary ? '#fafafa' : 'white'};
+  box-shadow: ${(props) => props.primary ? `-4px -4px 10px rgba(255, 255, 255, 0.5), 4px 4px 10px rgba(0, 0, 0, 0.1)` : props.secondary ? `-4px -4px 10px rgba(255, 255, 255, 0.8), 4px 4px 10px rgba(0, 0, 0, 0.05)` : 'none'};
+  transition: 0.3s box-shadow ease-in-out;
+  &::before {
+    content: "";
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(145deg, rgba(0,0,0,0.05), rgba(255,255,255,0.2));
+    mix-blend-mode: luminosity;
+    position: absolute;
+    left: 0;
+    top: 0;
+    border-radius: 24px;
+    animation: none;
+    opacity: 0;
+    transition: 0.3s opacity ease-in-out;
+  }
+  &:hover::before {
+    opacity: 1;
+    transition: 0.3s opacity ease-in-out;
+  }
+`
+
+const CarouselImage = styled.img`
+  width: 100%;
+  float: right;
+  object-fit: cover;
+  object-position: top;
+  &:hover {
+    cursor: grab;
+  }
+  &:active {
+    cursor:grabbing;
+  }
+`
+
+const CarouselContainer = styled.div`
+  margin: auto;
+`
+
+const StyledCarousel = styled(Carousel)`
+&.VueCarousel {
+  box-shadow: -10px -10px 30px rgba(255, 255, 255, 0.8), 10px 10px 30px rgba(0, 0, 0, 0.05);
+  border-radius: 10px;
+  overflow: hidden;
+  height: 275px;
+  width: 500px;
+}
+
+& > .VueCarousel-pagination {
+    position: absolute;
+    bottom: 0;
+}
+
+& > * > .VueCarousel-dot-container {
+  margin-top: 0px !important;
+}
+
+& > * > * > .VueCarousel-dot {
+  margin-top: 0px !important;
+  outline: none !important;
+  transition: 0.3s background-color ease-in-out;
+}
+
+& > * > * > .VueCarousel-dot--active {
+  transition: 0.3s background-color ease-in-out;
+  outline: none !important;
+}
+
+@media screen and (max-width: ${({theme}) => `${theme.screen.width.desktop}px`}) {
+  &.VueCarousel {
+    width: ${({theme}) => theme.screen.width.tablet - theme.screen.padding.tablet * 2}px;
+    height: ${({theme}) => (theme.screen.width.tablet - theme.screen.padding.tablet * 2) * 8.8 / 16}px;
+    margin: 20px 0px;
+  }
+}
+
+@media screen and (max-width: ${({theme}) => `${theme.screen.width.tablet}px`}) {
+  &.VueCarousel {
+    width: ${({theme}) => theme.screen.width.mobile - theme.screen.padding.mobile * 2}px;
+    height: ${({theme}) => (theme.screen.width.mobile - theme.screen.padding.mobile * 2) * 8.8 / 16}px;
+  }
+}
+`
 
 export default {
   components: {
     Carousel,
-    Slide
+    Slide,
+    Card,
+    Contents,
+    LeftContainer,
+    ProductTitle,
+    Subtitle,
+    Paragraph,
+    ButtonContainer,
+    StyledButton,
+    CarouselImage,
+    CarouselContainer,
+    StyledCarousel
   },
   props: {
     accolade: String,
@@ -82,188 +263,3 @@ export default {
   }
 }
 </script>
-
-<style scoped>
-.card {
-  width: var(--desktop-width);
-  background: radial-gradient(118.99% 670.46% at -7.06% -9.5%, #FFFFFF 0%, #F1F1F1 100%);
-  box-shadow: 20px 20px 60px rgba(0, 0, 0, 0.05), -20px -20px 60px rgba(255, 255, 255, 0.8);
-  border-radius: 20px;
-  margin: auto;
-  position: relative;
-  margin-bottom: 80px;
-}
-
-.left {
-  width: 320px;
-  margin-right: 10px;
-  display: flex;
-  justify-content: space-between;
-  flex-direction: column;
-}
-
-.copy-description {
-  margin: 20px 0px;
-  line-height: 1.47059;
-}
-
-.contents {
-  display: flex;
-  padding: 64px var(--desktop-padding-width);
-  /* height: 100%; */
-}
-
-.carousel-container.desktop {
-  margin: auto;
-}
-.carousel-container.mobile {
- margin: auto;
-}
-
-h1 {
-  font-size: 36px;
-  margin-top: 0px;
-}
-h2 {
-  font-size: 16px;
-  color: #888;
-  margin-bottom: 8px;
-}
-p {
-  font-size: 18px;
-
-}
-
-.buttons {
-  margin-top: 32px;
-}
-
-.button {
-  padding: 10px 32px;
-  font-weight: bold;
-  margin-right: 20px;
-  font-size: 18px;
-  border-radius: 24px;
-  line-height: 40px;
-
-  /* position: absolute;
-  bottom: 56px; */
-}
-
-.button::before {
-  content: "";
-  height: 100%;
-  width: 100%;
-  background: linear-gradient(145deg, rgba(0,0,0,0.05), rgba(255,255,255,0.2));
-  mix-blend-mode: luminosity;
-  position: absolute;
-  left: 0;
-  top: 0;
-  border-radius: 24px;
-  animation: none;
-  opacity: 0;
-  transition: 0.3s opacity ease-in-out;
-}
-
-.button:hover::before {
-  opacity: 1;
-  transition: 0.3s opacity ease-in-out;
-}
-
-.button.secondary {
-  color: var(--primary-color);
-  background: #fafafa;
-  box-shadow: -4px -4px 10px rgba(255, 255, 255, 0.8), 4px 4px 10px rgba(0, 0, 0, 0.05);
-}
-
-.button.primary {
-  background: var(--primary-color);
-  box-shadow: -4px -4px 10px rgba(255, 255, 255, 0.5), 4px 4px 10px rgba(0, 0, 0, 0.1);
-  color: white;
-  transition: 0.3s box-shadow ease-in-out;
-}
-
-img {
-  width: 100%;
-  float: right;
-  object-fit: cover;
-  object-position: top;
-}
-img:hover {
-  cursor: grab;
-}
-img:active {
-  cursor:grabbing;
-}
-
-.VueCarousel {
-  box-shadow: -10px -10px 30px rgba(255, 255, 255, 0.8), 10px 10px 30px rgba(0, 0, 0, 0.05);
-  border-radius: 10px;
-  overflow: hidden;
-  /* 155px if no description */
-  height: 275px;
-  width: 500px;
-}
-@media screen and (max-width: 980px) {
-  .contents {
-    padding: 40px var(--tablet-padding-width);
-    width: calc(var(--tablet-width) - var(--tablet-padding-width) * 2);
-    margin: 0;
-  }
-  .left {
-    width: calc(var(--tablet-width) - var(--tablet-padding-width) * 2);
-  }
-  .card {
-    width: var(--tablet-width);
-  }
-  .VueCarousel {
-    width: calc(var(--tablet-width) - var(--tablet-padding-width) * 2);
-    height: calc((var(--tablet-width) - var(--tablet-padding-width) * 2) * 8.8 / 16);
-    margin: 20px 0px;
-  }
-  .copy-description {
-    margin-bottom: 0;
-    margin-top: 32px
-  }
-}
-
-@media screen and (max-width: 600px) {
-  .contents {
-    padding: 40px var(--mobile-padding-width);
-    width: calc(var(--mobile-width) - var(--mobile-padding-width) * 2);
-  }
-  .left {
-    width: calc(var(--mobile-width) - var(--mobile-padding-width) * 2);
-  }
-  .card {
-    width: var(--mobile-width);
-  }
-  .VueCarousel {
-    width: calc(var(--mobile-width) - var(--mobile-padding-width) * 2);
-    height: calc((var(--mobile-width) - var(--mobile-padding-width) * 2) * 8.8 / 16);
-  }
-}
-
-</style>
-<style>
-.VueCarousel-pagination {
-    position: absolute;
-    bottom: 0;
-}
-.VueCarousel-dot {
-  /* height: 5px !important;
-  width: 20px !important;
-  border-radius: 20px !important; */
-  margin-top: 0px !important;
-  outline: none !important;
-  transition: 0.3s background-color ease-in-out;
-}
-.VueCarousel-dot-container {
-  margin-top: 0px !important;
-}
-.VueCarousel-dot--active {
-  /* background-color:#555 !important; */
-  transition: 0.3s background-color ease-in-out;
-  outline: none !important;
-}
-</style>

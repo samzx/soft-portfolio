@@ -1,100 +1,106 @@
 <template>
-  <div class="background">
-    <div class="container">
-      <div class="text-container">
-        <h1>{{author}}</h1>
-        <h2>Software engineer at <a class="linked" href="https://www.zendesk.com/about/" target="_blank">Zendesk</a>.</h2>
-        <h2>Indie software dev launching <a class="linked" href="/#products">one product</a> at a time.</h2>
-        <div class="social-links">
-          <h2><a class="linked" href="https://twitter.com/samxstudio" target="_blank"><i class="fab fa-twitter"></i> Twitter</a></h2>
-          <h2><a class="linked" href="https://medium.com/sam-xie" target="_blank"><i class="fab fa-medium"></i> Medium</a></h2>
-        </div>
-      </div>
-    </div>
-  </div>
+  <background>
+    <container>
+      <text-container>
+        <heading>{{author}}</heading>
+        <subheading>Software engineer at <linked href="https://www.zendesk.com/about/" target="_blank">Zendesk</linked>.</subheading>
+        <subheading>Indie software dev launching <linked href="/#products">one product</linked> at a time.</subheading>
+        <social-links>
+          <social-link-text><linked href="https://twitter.com/samxstudio" target="_blank"><i class="fab fa-twitter"></i> Twitter</linked></social-link-text>
+          <social-link-text><linked href="https://medium.com/sam-xie" target="_blank"><i class="fab fa-medium"></i> Medium</linked></social-link-text>
+        </social-links>
+      </text-container>
+    </container>
+  </background>
 </template>
 
 <script>
-export default {
-  props: {
-    author: String
-  }
-}
-</script>
+import { Linked } from './styles/Text.ts'
+import styled from 'vue-styled-components'
 
-<style scoped>
-.background {
+const Background = styled.div`
   background: url("https://res.cloudinary.com/xielabs/image/upload/v1588150730/spheres.jpg");
   background-size: cover;
   background-position: 50%;
   height: 800px;
   width: 100%;
-  min-width: var(--mobile-width);
+  min-width: ${({theme}) => theme.screen.width.mobile};
   margin: auto;
 
   /* Responsive */
   height: 100vh;
   min-height: 600px;
   max-height: 1440px;
+  @media screen and (max-width: 980px) {
+    background-position: 54% 0px;
+    background-size: inherit;
 }
+`
 
-.container {
+const Container = styled.div`
   max-width: 980px;
   margin: auto;
   /* padding-top: 180px; */
 
-/* Responsive */
+  /* Responsive */
   height: 100vh;
   min-height: 600px;
   max-height: 1440px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-}
+`
 
-.text-container {
+const TextContainer = styled.div`
   width: 360px;
   margin: 10px;
 
   /* Responsive */
   margin-top: -20px;
-}
 
-.social-links {
-  margin: 36px 0px;
-  display: flex;
-}
-
-.social-links h2 {
-  margin-right: 32px
-}
-
-h1, h2 {
-  font-weight: bold;
-}
-
-h1 {
-  font-size: 92px;
-  margin-bottom: 32px;
-}
-
-h2 {
-  font-size: 24px;
-  margin: 16px 0px;
-}
-
-@media screen and (max-width: 980px) {
-  .background {
-    background-position: 54% 0px;
-    background-size: inherit;
-  }
-  h1 {
-    font-size: 72px;
-  }
-
-  .text-container {
-    width: calc(var(--mobile-width) - var(--mobile-padding-width) * 2);
+  @media screen and (max-width: ${({theme}) => theme.screen.width.desktop}px) {
+    width: ${({theme}) => theme.screen.width.mobile - theme.screen.padding.mobile * 2};
     margin: auto;
   }
+`
+
+const Subheading = styled.h2`
+  font-size: 24px;
+  margin: 16px 0px;
+  font-weight: bold;
+`
+
+const Heading = styled.h1`
+  font-size: 92px;
+  margin-bottom: 32px;
+  font-weight: bold;
+  @media screen and (max-width: 980px) {
+    font-size: 72px;
+  }
+`
+
+const SocialLinks = styled.div`
+  margin: 36px 0px;
+  display: flex;
+`
+
+const SocialLinkText = styled(Subheading)`
+  margin-right: 32px;
+`
+
+export default {
+  components: {
+    Linked,
+    Background,
+    Container,
+    TextContainer,
+    SocialLinks,
+    SocialLinkText,
+    Heading,
+    Subheading,
+  },
+  props: {
+    author: String
+  }
 }
-</style>
+</script>
