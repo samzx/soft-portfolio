@@ -14,11 +14,12 @@
       />
     </CardContainer>
     <foot v-bind:author="author" v-bind:links="links" />
-    <mail href="mailto:contact@samxie.net">✉️</mail>
+    <light-toggle v-on:click="toggleTheme()">💡</light-toggle>
   </theme-provider>
 </template>
 
 <script>
+import Vue from 'vue'
 import styled from 'vue-styled-components'
 import Hero from './components/Hero.vue'
 import Card from './components/Card.vue'
@@ -26,20 +27,59 @@ import Foot from './components/Foot.vue'
 import { ThemeProvider, injectGlobal } from 'vue-styled-components'
 
 import baseData from './data/fixtures.ts'
-import theme from './theme.ts'
+import light from './themes/light.ts'
+import dark from './themes/dark.ts'
+
+const localStore = Vue.observable({
+  dark: false
+})
+
+const mutations = {
+  toggleDark() {
+    localStore.dark = !localStore.dark
+  },
+  setDark(isDark) {
+    localStore.dark = isDark
+  }
+}
+
+// Hack until createGlobalStyles comes to vue-styled-components
+const adjustTheme = () => {
+  var html = document.getElementsByTagName('html')[0]
+  var body = document.getElementsByTagName('body')[0]
+  if (localStore.dark) {
+    body.style.setProperty("--main-color", dark.color.text)
+    html.style.setProperty("--main-background-color", dark.color.background)
+  } else {
+    body.style.setProperty("--main-color", light.color.text)
+    html.style.setProperty("--main-background-color", light.color.background)
+  }
+}
+
+if (window.matchMedia) {
+  try {
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+        if(e.matches) {
+          localStore.dark = true
+        } else {
+          localStore.dark = false
+        }
+    })
+  } catch(e) {
+    console.error(e)
+  }
+}
 
 injectGlobal`
   html {
     font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
       Roboto, 'Helvetica Neue', 'Helvetica', Arial, sans-serif;
     font-size: 18px;
-    color: #222;
     -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
     box-sizing: border-box;
-    background: #F1F1F1;
   }
 
   body {
@@ -61,7 +101,9 @@ const CardContainer = styled.div`
   margin-top: -60px;
 `
 
-const Mail = styled.a`
+const LightToggle = styled.button`
+  border: none;
+  background: transparent;
   position: sticky;
   float: right;
   bottom: 20px;
@@ -72,6 +114,7 @@ const Mail = styled.a`
   text-decoration: none;
   transform: translateY(0px);
   transition: 0.3s transform ease-out;
+  cursor: pointer;
   &:hover {
     transform: translateY(-5px);
     transition: 0.2s transform ease-out;
@@ -86,11 +129,48 @@ export default {
     Foot,
     ThemeProvider,
     CardContainer,
-    Mail
+    LightToggle
+  },
+  computed: {
+    theme() {
+      return localStore.dark ? dark : light
+    }
+  },
+  methods: {
+    toggleTheme: () =>{
+      mutations.toggleDark()
+      adjustTheme()
+    },
   },
   data: () => ({
-    ...baseData,
-    theme
-  })
+    ...baseData
+  }),
+  mounted() {
+    if(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      localStore.dark = true
+    } else {
+      localStore.dark = false
+    }
+    console.log(localStore.dark)
+    adjustTheme()
+    // Avoid buggy animations
+    setTimeout(() => {
+      var html = document.getElementsByTagName('html')[0]
+      html.style.setProperty("transition", "0.3s color, 0.3s background")
+      var body = document.getElementsByTagName('body')[0]
+      body.style.setProperty("transition", "0.3s color, 0.3s background")
+    }, 300)
+  }
 }
 </script>
+
+<style>
+/* Hack until createGlobalStyles comes to vue-styled-components */
+html {
+  background: var(--main-background-color);
+}
+
+body {
+  color: var(--main-color);
+}
+</style>

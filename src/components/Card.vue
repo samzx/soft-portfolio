@@ -5,13 +5,13 @@
         <div>
           <subtitle>{{accolade}}</subtitle>
           <product-title>{{name}}</product-title>
-          <div v-if="windowWidth <= 980" class="carousel-container mobile">
-            <carousel v-if="images" :perPage="1" :paginationActiveColor="links.color">
+          <carousel-container v-if="windowWidth <= 980">
+            <styled-carousel v-if="images" :perPage="1" :paginationActiveColor="links.color">
               <slide v-for="(image, index) in images" :key="index">
-                <img v-bind:src="image"/>
+                <carousel-image v-bind:src="image"/>
               </slide>
-            </carousel>
-          </div>
+            </styled-carousel>
+          </carousel-container>
           <paragraph v-for="(text, index) in copy" :key="index">{{text}}</paragraph>
         </div>
         <button-container>
@@ -48,16 +48,16 @@ import { Carousel, Slide } from 'vue-carousel'
 
 const Card = styled.div`
   width: ${({theme}) => theme.screen.width.desktop}px;
-  background: radial-gradient(118.99% 670.46% at -7.06% -9.5%, #FFFFFF 0%, #F1F1F1 100%);
-  box-shadow: 20px 20px 60px rgba(0, 0, 0, 0.05), -20px -20px 60px rgba(255, 255, 255, 0.8);
+  background: ${({theme}) => theme.card.background};
+  box-shadow: ${({theme}) => theme.card.boxShadow};
   border-radius: 20px;
   margin: auto;
   position: relative;
   margin-bottom: 80px;
+  transition: background 0.3s;
   @media screen and (max-width: ${({theme}) => theme.screen.width.desktop}px) {
     width: ${({theme}) => theme.screen.width.tablet}px;
   }
-
   @media screen and (max-width: ${({theme}) => theme.screen.width.tablet}px) {
     width: ${({theme}) => theme.screen.width.mobile}px;
   }
@@ -129,10 +129,10 @@ const StyledButton = styled('a', btnProps)`
   font-size: 18px;
   border-radius: 24px;
   line-height: 40px;
-  color: ${(props) => props.primary ? 'white' : props.secondary ? props.color : 'black'};
-  background: ${(props) => props.primary ? props.color : props.secondary ? '#fafafa' : 'white'};
-  box-shadow: ${(props) => props.primary ? `-4px -4px 10px rgba(255, 255, 255, 0.5), 4px 4px 10px rgba(0, 0, 0, 0.1)` : props.secondary ? `-4px -4px 10px rgba(255, 255, 255, 0.8), 4px 4px 10px rgba(0, 0, 0, 0.05)` : 'none'};
-  transition: 0.3s box-shadow ease-in-out;
+  color: ${(props) => props.primary ? props.theme.card.button.text : props.secondary ? props.color : 'black'};
+  background: ${(props) => props.primary ? props.color : props.secondary ? props.theme.card.button.background : 'white'};
+  box-shadow: ${(props) => props.primary ? props.theme.card.button.boxShadow.primary : props.secondary ? props.theme.card.button.boxShadow.secondary : 'none'};
+  transition: 0.3s background;
   &::before {
     content: "";
     height: 100%;
@@ -145,11 +145,11 @@ const StyledButton = styled('a', btnProps)`
     border-radius: 24px;
     animation: none;
     opacity: 0;
-    transition: 0.3s opacity ease-in-out;
+    transition: 0.3s opacity ease-in-out, 0.3s background;
   }
   &:hover::before {
-    opacity: 1;
-    transition: 0.3s opacity ease-in-out;
+    opacity: ${({theme}) => theme.card.button.hoverIntensity};
+    transition: 0.3s opacity ease-in-out, 0.3s background;
   }
 `
 
@@ -158,6 +158,7 @@ const CarouselImage = styled.img`
   float: right;
   object-fit: cover;
   object-position: top;
+  opacity: ${({theme}) => theme.card.carousel.opacity}
   &:hover {
     cursor: grab;
   }
@@ -172,7 +173,7 @@ const CarouselContainer = styled.div`
 
 const StyledCarousel = styled(Carousel)`
 &.VueCarousel {
-  box-shadow: -10px -10px 30px rgba(255, 255, 255, 0.8), 10px 10px 30px rgba(0, 0, 0, 0.05);
+  box-shadow: ${({theme}) => theme.card.carousel.boxShadow};
   border-radius: 10px;
   overflow: hidden;
   height: 275px;
@@ -190,16 +191,16 @@ const StyledCarousel = styled(Carousel)`
 
 & > * > * > .VueCarousel-dot {
   margin-top: 0px !important;
-  outline: none !important;
+  /* outline: none !important; */
   transition: 0.3s background-color ease-in-out;
 }
 
 & > * > * > .VueCarousel-dot--active {
   transition: 0.3s background-color ease-in-out;
-  outline: none !important;
+  /* outline: none !important; */
 }
 
-@media screen and (max-width: ${({theme}) => `${theme.screen.width.desktop}px`}) {
+@media screen and (max-width: ${({theme}) => theme.screen.width.desktop}px) {
   &.VueCarousel {
     width: ${({theme}) => theme.screen.width.tablet - theme.screen.padding.tablet * 2}px;
     height: ${({theme}) => (theme.screen.width.tablet - theme.screen.padding.tablet * 2) * 8.8 / 16}px;
@@ -207,7 +208,7 @@ const StyledCarousel = styled(Carousel)`
   }
 }
 
-@media screen and (max-width: ${({theme}) => `${theme.screen.width.tablet}px`}) {
+@media screen and (max-width: ${({theme}) => theme.screen.width.tablet}px) {
   &.VueCarousel {
     width: ${({theme}) => theme.screen.width.mobile - theme.screen.padding.mobile * 2}px;
     height: ${({theme}) => (theme.screen.width.mobile - theme.screen.padding.mobile * 2) * 8.8 / 16}px;
@@ -217,7 +218,6 @@ const StyledCarousel = styled(Carousel)`
 
 export default {
   components: {
-    Carousel,
     Slide,
     Card,
     Contents,

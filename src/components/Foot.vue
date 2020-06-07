@@ -19,12 +19,12 @@ const AppFooter = styled.div`
   font-size: 18px;
   font-weight: bold;
 
-  @media screen and (max-width: ${({theme}) => `${theme.screen.width.desktop}px`}) {
+  @media screen and (max-width: ${({theme}) => theme.screen.width.desktop}px) {
     padding: 0px 20px;
     width: ${({theme}) => theme.screen.width.tablet - theme.screen.padding.tablet * 2}px;
   }
 
-  @media screen and (max-width: ${({theme}) => `${theme.screen.width.tablet}px`}) {
+  @media screen and (max-width: ${({theme}) => theme.screen.width.tablet}px) {
     width: ${({theme}) => theme.screen.width.mobile - theme.screen.padding.mobile * 2}px;
   }
 `

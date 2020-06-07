@@ -19,7 +19,7 @@ import { Linked } from './styles/Text.ts'
 import styled from 'vue-styled-components'
 
 const Background = styled.div`
-  background: url("https://res.cloudinary.com/xielabs/image/upload/v1588150730/spheres.jpg");
+  background: url(${({theme}) => theme.hero.background.image});
   background-size: cover;
   background-position: 50%;
   height: 800px;
@@ -31,14 +31,14 @@ const Background = styled.div`
   height: 100vh;
   min-height: 600px;
   max-height: 1440px;
-  @media screen and (max-width: 980px) {
+  @media screen and (max-width: ${({theme}) => theme.screen.width.desktop}px) {
     background-position: 54% 0px;
-    background-size: inherit;
+    background-size: ${({theme}) => theme.hero.background.size};
 }
 `
 
 const Container = styled.div`
-  max-width: 980px;
+  max-width: ${({theme}) => theme.screen.width.desktop}px;
   margin: auto;
   /* padding-top: 180px; */
 
@@ -59,7 +59,7 @@ const TextContainer = styled.div`
   margin-top: -20px;
 
   @media screen and (max-width: ${({theme}) => theme.screen.width.desktop}px) {
-    width: ${({theme}) => theme.screen.width.mobile - theme.screen.padding.mobile * 2};
+    width: ${({theme}) => theme.screen.width.mobile - theme.screen.padding.mobile * 2}px;
     margin: auto;
   }
 `
@@ -74,7 +74,7 @@ const Heading = styled.h1`
   font-size: 92px;
   margin-bottom: 32px;
   font-weight: bold;
-  @media screen and (max-width: 980px) {
+  @media screen and (max-width: ${({theme}) => theme.screen.width.desktop}px) {
     font-size: 72px;
   }
 `
