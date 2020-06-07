@@ -151,7 +151,6 @@ export default {
     } else {
       localStore.dark = false
     }
-    console.log(localStore.dark)
     adjustTheme()
     // Avoid buggy animations
     setTimeout(() => {
