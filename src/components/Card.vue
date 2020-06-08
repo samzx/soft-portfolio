@@ -54,7 +54,8 @@ const Card = styled.div`
   margin: auto;
   position: relative;
   margin-bottom: 80px;
-  transition: background 0.3s;
+  /* Can't transition radial gradients */
+  /* transition: 0.3s background; */
   @media screen and (max-width: ${({theme}) => theme.screen.width.desktop}px) {
     width: ${({theme}) => theme.screen.width.tablet}px;
   }
@@ -132,7 +133,8 @@ const StyledButton = styled('a', btnProps)`
   color: ${(props) => props.primary ? props.theme.card.button.text : props.secondary ? props.color : 'black'};
   background: ${(props) => props.primary ? props.color : props.secondary ? props.theme.card.button.background : 'white'};
   box-shadow: ${(props) => props.primary ? props.theme.card.button.boxShadow.primary : props.secondary ? props.theme.card.button.boxShadow.secondary : 'none'};
-  transition: 0.3s background;
+  /* Won't transition background since card can't transition. */
+  /* transition: 0.3s background; */
   &::before {
     content: "";
     height: 100%;
