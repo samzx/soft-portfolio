@@ -3,7 +3,7 @@
     <hero
       v-bind:author="author"
     />
-    <CardContainer id="products">
+    <card-container id="products">
       <card
         v-for="(product, index) in products" :key="index"
         v-bind:accolade="product.accolade"
@@ -12,7 +12,7 @@
         v-bind:links="product.links"
         v-bind:images="product.images"
       />
-    </CardContainer>
+    </card-container>
     <foot v-bind:author="author" v-bind:links="links" />
     <light-toggle v-on:click="toggleTheme()">💡</light-toggle>
   </theme-provider>
