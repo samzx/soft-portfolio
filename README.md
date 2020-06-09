@@ -1,5 +1,7 @@
 # soft-portfolio
 
+<img src="https://res.cloudinary.com/xielabs/image/upload/v1591699992/soft-portfolio-screen.jpg" />
+
 ## Project setup
 ```
 yarn install
