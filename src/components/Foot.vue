@@ -14,7 +14,7 @@ import { Linked } from './styles/Text.ts'
 const AppFooter = styled.div`
   width: ${({theme}) => theme.screen.width.desktop - theme.screen.padding.desktop * 2}px;
   margin: 64px auto;
-  padding: 0px ${({theme}) => theme.screen.padding.desktop};
+  padding: 0px ${({theme}) => theme.screen.padding.desktop}px;
   display: flex;
   font-size: 18px;
   font-weight: bold;

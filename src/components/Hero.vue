@@ -24,7 +24,7 @@ const Background = styled.div`
   background-position: 50%;
   height: 800px;
   width: 100%;
-  min-width: ${({theme}) => theme.screen.width.mobile};
+  min-width: ${({theme}) => theme.screen.width.mobile}px;
   margin: auto;
 
   /* Responsive */
@@ -32,8 +32,8 @@ const Background = styled.div`
   min-height: 600px;
   max-height: 1440px;
   @media screen and (max-width: ${({theme}) => theme.screen.width.desktop}px) {
-    background-position: 54% 0px;
-    background-size: ${({theme}) => theme.hero.background.size};
+    background-position: 60% -45px;
+    background-size: inherit;
 }
 `
 

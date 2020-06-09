@@ -64,6 +64,7 @@ if (window.matchMedia) {
         } else {
           localStore.dark = false
         }
+        adjustTheme()
     })
   } catch(e) {
     console.error(e)

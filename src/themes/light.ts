@@ -1,8 +1,7 @@
 export default {
   hero: {
     background: {
-      image: "https://res.cloudinary.com/xielabs/image/upload/v1588150730/spheres.jpg",
-      size: "inherit"
+      image: "https://res.cloudinary.com/xielabs/image/upload/v1591689176/flight-light.jpg",
     }
   },
   color: {
