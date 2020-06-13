@@ -21,7 +21,8 @@ export default {
       background:  "#fafafa",
       boxShadow: {
         primary: "-4px -4px 10px rgba(255, 255, 255, 0.8), 4px 4px 10px rgba(0, 0, 0, 0.2)",
-        secondary: "-4px -4px 10px rgba(255, 255, 255, 1), 4px 4px 10px rgba(0, 0, 0, 0.1)"
+        secondary: "-4px -4px 10px rgba(255, 255, 255, 1), 4px 4px 10px rgba(0, 0, 0, 0.1)",
+        hover: "linear-gradient(145deg, rgba(0,0,0,0.05), rgba(255,255,255,0.2))"
       },
       hoverIntensity: 1
     }

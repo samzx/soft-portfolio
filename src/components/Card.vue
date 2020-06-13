@@ -139,7 +139,7 @@ const StyledButton = styled('a', btnProps)`
     content: "";
     height: 100%;
     width: 100%;
-    background: linear-gradient(145deg, rgba(0,0,0,0.66), rgba(255,255,255,0.2));
+    background: ${({theme}) => theme.card.button.boxShadow.hover};
     mix-blend-mode: luminosity;
     position: absolute;
     left: 0;
