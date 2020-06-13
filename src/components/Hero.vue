@@ -52,7 +52,7 @@ const Container = styled.div`
 `
 
 const TextContainer = styled.div`
-  width: 360px;
+  width: 355px;
   margin: 10px;
 
   /* Responsive */
