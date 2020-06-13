@@ -20,7 +20,7 @@ export default {
       text: "#fff",
       background:  "#0f0f0f",
       boxShadow: {
-        primary: "-4px -4px 10px rgba(255, 255, 255, 0.1), 4px 4px 10px rgba(0, 0, 0, 0.5)",
+        primary: "-4px -4px 10px rgba(255, 255, 255, 0.08), 4px 4px 10px rgba(0, 0, 0, 0.5)",
         secondary: "-4px -4px 10px rgba(255, 255, 255, 0.05), 4px 4px 10px rgba(0, 0, 0, 0.8)"
       },
       hoverIntensity: 0.25
