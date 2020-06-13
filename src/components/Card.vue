@@ -130,7 +130,7 @@ const StyledButton = styled('a', btnProps)`
   font-size: 18px;
   border-radius: 24px;
   line-height: 40px;
-  color: ${(props) => props.primary ? props.theme.card.button.text : props.secondary ? props.color : 'black'};
+  color: ${(props) => props.primary ? "#eee" : props.secondary ? props.theme.card.button.text : 'black'};
   background: ${(props) => props.primary ? props.color : props.secondary ? props.theme.card.button.background : 'white'};
   box-shadow: ${(props) => props.primary ? props.theme.card.button.boxShadow.primary : props.secondary ? props.theme.card.button.boxShadow.secondary : 'none'};
   /* Won't transition background since card can't transition. */

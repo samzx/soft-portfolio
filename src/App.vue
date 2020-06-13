@@ -14,7 +14,7 @@
       />
     </card-container>
     <foot v-bind:author="author" v-bind:links="links" />
-    <light-toggle v-on:click="toggleTheme()">💡</light-toggle>
+    <light-toggle v-on:click="toggleTheme()"><span v-if="!isDark" >💡</span><span v-if="isDark">💡</span></light-toggle>
   </theme-provider>
 </template>
 
@@ -73,7 +73,7 @@ if (window.matchMedia) {
 
 injectGlobal`
   html {
-    font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
+    font-family: 'Source Sans Pro', BlinkMacSystemFont,
       Roboto, 'Helvetica Neue', 'Helvetica', Arial, sans-serif;
     font-size: 18px;
     -ms-text-size-adjust: 100%;
@@ -135,6 +135,9 @@ export default {
   computed: {
     theme() {
       return localStore.dark ? dark : light
+    },
+    isDark() {
+      return localStore.dark
     }
   },
   methods: {
