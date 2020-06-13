@@ -73,18 +73,18 @@ if (window.matchMedia) {
 
 injectGlobal`
   @font-face {
-    font-family: "SF Pro";
+    font-family: "SF Pro Display";
     font-weight: 400;
     src: url("/fonts/SFProDisplay-Regular.ttf");
   }
   @font-face {
-    font-family: "SF Pro";
+    font-family: "SF Pro Display";
     font-weight: 700;
     src: url("/fonts/SFProDisplay-Bold.ttf");
   }
 
   html {
-    font-family: 'SF Pro', -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-family: 'SF Pro Display', -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     font-size: 18px;
     -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
