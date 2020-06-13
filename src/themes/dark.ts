@@ -6,7 +6,7 @@ export default {
   },
   color: {
     link: "#3B70A2",
-    text: "#eee",
+    text: "#fff",
     background: "#222",
   },
   card: {
@@ -17,7 +17,7 @@ export default {
       boxShadow: "-10px -10px 30px rgba(255, 255, 255, 0.05), 10px 10px 30px rgba(0, 0, 0, 0.8)"
     },
     button: {
-      text: "#eee",
+      text: "#fff",
       background:  "#0f0f0f",
       boxShadow: {
         primary: "-4px -4px 10px rgba(255, 255, 255, 0.1), 4px 4px 10px rgba(0, 0, 0, 0.5)",
