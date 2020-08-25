@@ -3,19 +3,18 @@ export default {
   products: [
     {
       accolade: "17th on Product Hunt",
-      name: "Messengerlytics",
-      copy: ["Download your Facebook messages and let our tool generate insights for your friendships."],
+      name: "Double Text",
+      copy: ["For when you don't realise you've been double texting too much."],
       links: {
         color: "#363636",
         primary: {
           name: "Visit",
-          url: "https://messengerlytics.com/"
+          url: "https://doubletext.me/"
         }
       },
       images: [
-        "/messengerlytics/wordcloud.jpg",
-        "/messengerlytics/activity.jpg",
-        "/messengerlytics/count.jpg"
+        "/doubletext/s1.jpg",
+        "/doubletext/s2.jpg",
       ]
     },
     {
