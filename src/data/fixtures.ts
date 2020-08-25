@@ -4,7 +4,7 @@ export default {
     {
       accolade: "17th on Product Hunt",
       name: "Double Text",
-      copy: ["For when you don't realise you've been double texting too much."],
+      copy: ["Facebook messenger analyzer - for when you don't realise you've been double texting too much."],
       links: {
         color: "#363636",
         primary: {
