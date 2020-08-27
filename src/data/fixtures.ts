@@ -2,9 +2,11 @@ export default {
   author: "Sam Xie",
   products: [
     {
-      accolade: "17th on Product Hunt",
+      // accolade: "Language Processing",
       name: "Double Text",
-      copy: ["Facebook messenger analyzer - for when you don't realise you've been double texting too much."],
+      copy: [
+        "Learn about your texting behaviour, and theirs too. A clean Facebook messenger analyzer."
+      ],
       links: {
         color: "#363636",
         primary: {
@@ -13,12 +15,15 @@ export default {
         }
       },
       images: [
-        "/doubletext/s1.jpg",
-        "/doubletext/s2.jpg",
+        "/doubletext/Product Hunt 2.jpg",
+        "/doubletext/Product Hunt 3.jpg",
+        "/doubletext/Product Hunt 4.jpg",
+        "/doubletext/Product Hunt 5.jpg",
+        "/doubletext/Product Hunt 6.jpg",
       ]
     },
     {
-      accolade: "2,000 Peak MAU",
+      // accolade: "Cryptocurrency",
       name: "MPH Watch",
       copy: ["Clean and simple interface for monitoring cryptocurrency mining activity on Mining Pool Hub. "],
       links: {
@@ -37,7 +42,7 @@ export default {
       ]
     },
     {
-      accolade: "Unique locomotion",
+      // accolade: "Virtual Reality",
       name: "Final Slash VR",
       copy: ["A short survival experience on an abandoned planet with fluid locomotion."],
       links: {

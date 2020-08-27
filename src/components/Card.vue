@@ -100,18 +100,22 @@ const LeftContainer = styled.div`
 const ProductTitle = styled.h1`
   font-size: 36px;
   margin-top: 0px;
+  letter-spacing: 0.5px;
 `
 
 const Subtitle = styled.h2`
   font-size: 16px;
   color: #888;
   margin-bottom: 8px;
+  letter-spacing: 1px;
+  font-weight: 400;
 `
 
 const Paragraph = styled.p`
   font-size: 18px;
   margin: 20px 0px;
   line-height: 1.47059;
+  letter-spacing: 0.25px;
   @media screen and (max-width: ${({theme}) => theme.screen.width.desktop}px) {
     margin-bottom: 0;
     margin-top: 32px
@@ -124,6 +128,7 @@ const ButtonContainer = styled.div`
 
 const btnProps = { primary: Boolean, secondary: Boolean, color: String }
 const StyledButton = styled('a', btnProps)`
+  letter-spacing: 0.5px;
   padding: 10px 32px;
   font-weight: bold;
   margin-right: 20px;
