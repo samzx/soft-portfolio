@@ -4,7 +4,7 @@
       <text-container>
         <heading>{{author}}</heading>
         <subheading>Software engineer at <linked href="https://www.zendesk.com/about/" target="_blank">Zendesk</linked>.</subheading>
-        <subheading>Indie software dev launching <linked href="/#products">one product</linked> at a time.</subheading>
+        <subheading>Launching new side <linked href="/#products">projects</linked> now and then.</subheading>
         <social-links>
           <social-link-text><linked href="https://twitter.com/samxstudio" target="_blank"><i class="fab fa-twitter"></i> Twitter</linked></social-link-text>
           <social-link-text><linked href="https://medium.com/sam-xie" target="_blank"><i class="fab fa-medium"></i> Medium</linked></social-link-text>
