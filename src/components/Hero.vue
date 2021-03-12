@@ -2,7 +2,9 @@
   <background>
     <container>
       <text-container>
-        <heading>{{author}}</heading>
+        <heading-background>
+          <heading>{{author}}</heading>
+        </heading-background>
         <subtitle>Software engineer at <linked href="https://www.zendesk.com/about/" target="_blank">Zendesk</linked>.</subtitle>
         <paragraph>Building reliable and scalable systems by day. Leveraging technology to launch fully featured <linked href="/#products">products</linked> by night.</paragraph>
         <social-links>
@@ -80,6 +82,15 @@ const Heading = styled.h1`
   }
 `
 
+const HeadingBackground = styled.div`
+  background-color: black;
+	background: url("https://i.giphy.com/media/26AHL0EG33tA1geoE/giphy.webp") no-repeat center center;
+  /* background: url("https://media.giphy.com/media/JQAAnM6tghQPdVcA3u/giphy.gif") no-repeat center center; */
+  background-size: cover;
+	-webkit-text-fill-color: transparent;
+	-webkit-background-clip: text;
+`
+
 const SocialLinks = styled.div`
   margin: 36px 0px;
   display: flex;
@@ -99,6 +110,7 @@ export default {
     SocialLinks,
     SocialLinkText,
     Heading,
+    HeadingBackground,
     Subtitle,
     Paragraph
   },
