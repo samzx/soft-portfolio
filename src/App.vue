@@ -122,6 +122,9 @@ injectGlobal`
 
 const CardContainer = styled.div`
   margin-top: -60px;
+  @media screen and (max-width: ${({theme}) => theme.screen.width.desktop}px) {
+    margin-top: -48px;
+  }
 `
 
 const LightToggle = styled.button`
