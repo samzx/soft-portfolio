@@ -16,8 +16,8 @@ export default {
         }
       },
       images: [
-        "/doubletext/Product Hunt 5.jpg",
         "/doubletext/Product Hunt 6.jpg",
+        "/doubletext/Product Hunt 5.jpg",
         "/doubletext/Product Hunt 2.jpg",
         "/doubletext/Product Hunt 3.jpg",
         "/doubletext/Product Hunt 4.jpg",
