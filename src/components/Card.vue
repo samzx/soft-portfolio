@@ -3,8 +3,12 @@
     <contents>
       <left-container>
         <div>
-          <subtitle>{{accolade}}</subtitle>
           <product-title>{{name}}</product-title>
+          <medium>
+            <medium-item v-for="(item, index) in medium" :key="`medium-item-${index}`">
+                <span>{{item}}</span><span v-if="index != medium.length - 1"> · </span>
+            </medium-item>
+          </medium>
           <carousel-container v-if="windowWidth <= 980">
             <styled-carousel v-if="images" :perPage="1" :paginationActiveColor="links.color">
               <slide v-for="(image, index) in images" :key="index">
@@ -12,9 +16,10 @@
               </slide>
             </styled-carousel>
           </carousel-container>
+          <subtitle>{{summary}}</subtitle>
           <paragraph v-for="(text, index) in copy" :key="index">{{text}}</paragraph>
         </div>
-        <button-container>
+        <button-container :empty="!copy">
           <styled-button
             v-if="links.primary"
             primary
@@ -45,6 +50,7 @@
 <script>
 import styled from 'vue-styled-components'
 import { Carousel, Slide } from 'vue-carousel'
+import { Subtitle, Paragraph } from './styles/Text.ts'
 
 const Card = styled.div`
   width: ${({theme}) => theme.screen.width.desktop}px;
@@ -101,38 +107,38 @@ const ProductTitle = styled.h1`
   font-size: 36px;
   margin-top: 0px;
   letter-spacing: 0.5px;
-`
-
-const Subtitle = styled.h2`
-  font-size: 16px;
-  color: #888;
   margin-bottom: 8px;
-  letter-spacing: 1px;
-  font-weight: 400;
 `
 
-const Paragraph = styled.p`
+const Medium = styled.div`
+  font-weight: 300;
   font-size: 18px;
-  margin: 20px 0px;
-  line-height: 1.47059;
-  letter-spacing: 0.25px;
-  @media screen and (max-width: ${({theme}) => theme.screen.width.desktop}px) {
-    margin-bottom: 0;
-    margin-top: 32px
-  }
+  letter-spacing: 1.8px;
+  margin-bottom: 24px;
 `
 
-const ButtonContainer = styled.div`
-  margin-top: 32px;
+const MediumItem = styled.span`
+  font-weight: 300;
+  font-size: 18px;
+  letter-spacing: 1.8px;
+`
+
+const btnContainerProps = { empty: Boolean }
+const ButtonContainer = styled('div', btnContainerProps)`
+  @media screen and (max-width: ${({theme}) => theme.screen.width.desktop}px) {
+    margin-top: 32px;
+  }
+  margin-top: ${(props) => props.empty ? 32 : 0}px;
 `
 
 const btnProps = { primary: Boolean, secondary: Boolean, color: String }
 const StyledButton = styled('a', btnProps)`
-  letter-spacing: 0.5px;
-  padding: 10px 32px;
+  font-size: 12px;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  padding: 14px 32px;
   font-weight: bold;
   margin-right: 20px;
-  font-size: 18px;
   border-radius: 24px;
   line-height: 40px;
   color: ${(props) => props.primary ? "#eee" : props.secondary ? props.theme.card.button.text : 'black'};
@@ -236,11 +242,14 @@ export default {
     StyledButton,
     CarouselImage,
     CarouselContainer,
-    StyledCarousel
+    StyledCarousel,
+    Medium,
+    MediumItem
   },
   props: {
-    accolade: String,
     name: String,
+    medium: Array,
+    summary: String,
     copy: Array,
     links: {
       color: String,

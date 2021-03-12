@@ -3,8 +3,8 @@
     <container>
       <text-container>
         <heading>{{author}}</heading>
-        <subheading>Software engineer at <linked href="https://www.zendesk.com/about/" target="_blank">Zendesk</linked>.</subheading>
-        <subheading>Indie software dev launching <linked href="/#products">one product</linked> at a time.</subheading>
+        <subtitle>Software engineer at <linked href="https://www.zendesk.com/about/" target="_blank">Zendesk</linked>.</subtitle>
+        <paragraph>Building reliable and scalable systems by day. Leveraging technology to launch fully featured <linked href="/#products">products</linked> by night.</paragraph>
         <social-links>
           <social-link-text><linked href="https://twitter.com/samxstudio" target="_blank"><i class="fab fa-twitter"></i> Twitter</linked></social-link-text>
           <social-link-text><linked href="https://medium.com/sam-xie" target="_blank"><i class="fab fa-medium"></i> Medium</linked></social-link-text>
@@ -17,6 +17,7 @@
 <script>
 import { Linked } from './styles/Text.ts'
 import styled from 'vue-styled-components'
+import { Subtitle, Paragraph } from './styles/Text.ts'
 
 const Background = styled.div`
   background: url(${({theme}) => theme.hero.background.image});
@@ -65,14 +66,14 @@ const TextContainer = styled.div`
 `
 
 const Subheading = styled.h2`
-  font-size: 24px;
+  font-size: 18px;
   margin: 16px 0px;
-  font-weight: bold;
+  font-weight: 300;
 `
 
 const Heading = styled.h1`
   font-size: 92px;
-  margin-bottom: 32px;
+  margin: 32px auto;
   font-weight: bold;
   @media screen and (max-width: ${({theme}) => theme.screen.width.desktop}px) {
     font-size: 72px;
@@ -86,6 +87,7 @@ const SocialLinks = styled.div`
 
 const SocialLinkText = styled(Subheading)`
   margin-right: 32px;
+  font-weight: bold;
 `
 
 export default {
@@ -97,7 +99,8 @@ export default {
     SocialLinks,
     SocialLinkText,
     Heading,
-    Subheading,
+    Subtitle,
+    Paragraph
   },
   props: {
     author: String

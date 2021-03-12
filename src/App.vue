@@ -6,8 +6,9 @@
     <card-container id="products">
       <card
         v-for="(product, index) in products" :key="index"
-        v-bind:accolade="product.accolade"
         v-bind:name="product.name"
+        v-bind:medium="product.medium"
+        v-bind:summary="product.summary"
         v-bind:copy="product.copy"
         v-bind:links="product.links"
         v-bind:images="product.images"
@@ -81,6 +82,17 @@ injectGlobal`
     font-family: "SF Pro Display";
     font-weight: 700;
     src: url("/fonts/SFProDisplay-Bold.ttf");
+  }
+  @font-face {
+    font-family: "SF Pro Display";
+    font-weight: 300;
+    src: url("/fonts/SFProDisplay-Light.ttf");
+  }
+  @font-face {
+    font-family: "SF Pro Display";
+    font-weight: 400;
+    font-style: italic;
+    src: url("/fonts/SFProDisplay-RegularItalic.ttf");
   }
 
   html {

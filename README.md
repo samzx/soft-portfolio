@@ -1,6 +1,6 @@
 # Soft Portfolio
 
-<img src="https://res.cloudinary.com/xielabs/image/upload/v1591699992/soft-portfolio-screen.jpg" />
+<img src="./docs/soft-portfolio-ss.jpg" />
 
 Neumorphic inspired personal website. Showcase your projects with carousels and link up your social.
 
@@ -16,6 +16,8 @@ Clone and deploy with vercel.
 
 ### Configurations
 Under `src/data/fixtures.ts`, edit to customise copy.
+
+Under `src/components/Hero.vue`, edit to customise copy.
 
 Under `src/themes`, edit light and dark themes (including background image).
 

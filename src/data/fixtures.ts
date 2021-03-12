@@ -2,30 +2,52 @@ export default {
   author: "Sam Xie",
   products: [
     {
-      // accolade: "Language Processing",
       name: "Double Text",
+      medium: ["React", "Go", "GraphQL", "Postgres"],
+      summary: "Facebook Messenger Analyzer",
       copy: [
-        "Learn about your texting behaviour, and theirs too. A clean Facebook messenger analyzer."
+        "Discover your chat behaviour for when you don't realise you've been double texting too much."
       ],
       links: {
         color: "#363636",
         primary: {
-          name: "Visit",
+          name: "Discover",
           url: "https://doubletext.me/"
         }
       },
       images: [
-        "/doubletext/Product Hunt 3.jpg",
-        "/doubletext/Product Hunt 2.jpg",
-        "/doubletext/Product Hunt 4.jpg",
         "/doubletext/Product Hunt 5.jpg",
         "/doubletext/Product Hunt 6.jpg",
+        "/doubletext/Product Hunt 2.jpg",
+        "/doubletext/Product Hunt 3.jpg",
+        "/doubletext/Product Hunt 4.jpg",
       ]
     },
     {
-      // accolade: "Cryptocurrency",
+      name: "Volunteer Portal",
+      medium: ["React", "Rails", "GraphQL", "Postgres"],
+      summary: "Volunteering Events Portal",
+      copy: ["An event calendar focused on tracking and reporting volunteering opportunities."],
+      links: {
+        color: "#363636",
+        primary: {
+          name: "Github",
+          url: "https://github.com/zendesk/volunteer_portal"
+        },
+        secondary: {
+          name: "Demo",
+          url: "https://volunteer-portal-demo.herokuapp.com/"
+        }
+      },
+      images: [
+        "/volunteerportal/1.jpg"
+      ]
+    },
+    {
       name: "MPH Watch",
-      copy: ["Clean and simple interface for monitoring cryptocurrency mining activity on Mining Pool Hub. "],
+      medium: ["React", "NodeJS", "ChartJS"],
+      summary: "Crypto Mining Stats",
+      copy: ["Track your mining progress for miners on Mining Pool Hub."],
       links: {
         color: "#363636",
         primary: {
@@ -42,13 +64,14 @@ export default {
       ]
     },
     {
-      // accolade: "Virtual Reality",
-      name: "Final Slash VR",
-      copy: ["A short survival experience on an abandoned planet with fluid locomotion."],
+      name: "Prototype I",
+      medium: ["Unity", "OculusSDK"],
+      summary: "Freestyle locomotion system",
+      copy: ["A short survival experience on an abandoned planet."],
       links: {
         color: "#363636",
         primary: {
-          name: "Visit",
+          name: "Discover",
           url: "https://samzx.itch.io/final-slash-vr"
         },
       },
@@ -59,7 +82,7 @@ export default {
       ]
     },
     {
-      name: "More works on",
+      name: "More works",
       links: {
         color: "#363636",
         primary: {

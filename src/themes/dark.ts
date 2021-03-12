@@ -1,7 +1,7 @@
 export default {
   hero: {
     background: {
-      image: "/flight-dark.jpg",
+      image: "/flight-mid.jpg",
     }
   },
   color: {
