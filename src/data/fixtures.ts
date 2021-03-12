@@ -3,7 +3,7 @@ export default {
   products: [
     {
       name: "Double Text",
-      medium: ["React", "Go", "GraphQL", "Postgres"],
+      medium: ["React", "Go", "GraphQL"],
       summary: "Facebook Messenger Analyzer",
       copy: [
         "Discover your chat behaviour for when you don't realise you've been double texting too much."
@@ -25,7 +25,7 @@ export default {
     },
     {
       name: "Volunteer Portal",
-      medium: ["React", "Rails", "GraphQL", "Postgres"],
+      medium: ["React", "Rails", "GraphQL"],
       summary: "Volunteering Events Portal",
       copy: ["An event calendar focused on tracking and reporting volunteering opportunities."],
       links: {
@@ -45,7 +45,7 @@ export default {
     },
     {
       name: "MPH Watch",
-      medium: ["React", "NodeJS", "ChartJS"],
+      medium: ["React", "NodeJS"],
       summary: "Crypto Mining Stats",
       copy: ["Track your mining progress for miners on Mining Pool Hub."],
       links: {
