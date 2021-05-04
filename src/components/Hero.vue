@@ -31,7 +31,7 @@ const Background = styled.div`
   /* Responsive */
   height: 100vh;
   min-height: 600px;
-  max-height: 1440px;
+  max-height: 1035px;
   @media screen and (max-width: ${({theme}) => theme.screen.width.desktop}px) {
     background-position: 60% -45px;
     background-size: inherit;
@@ -46,7 +46,7 @@ const Container = styled.div`
   /* Responsive */
   height: 100vh;
   min-height: 600px;
-  max-height: 1440px;
+  max-height: 1035px;
   display: flex;
   flex-direction: column;
   justify-content: center;
