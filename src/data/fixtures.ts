@@ -44,44 +44,6 @@ export default {
       ]
     },
     {
-      name: "MPH Watch",
-      medium: ["React", "NodeJS"],
-      summary: "Crypto Mining Stats",
-      copy: ["Track your mining progress for miners on Mining Pool Hub."],
-      links: {
-        color: "#363636",
-        primary: {
-          name: "Demo",
-          url: "http://mphwatch.samxie.net/demo"
-        },
-        secondary: {
-          name: "Login",
-          url: "http://mphwatch.samxie.net/"
-        }
-      },
-      images: [
-        "/mphwatch/mphwatch.jpg",
-      ]
-    },
-    {
-      name: "Prototype I",
-      medium: ["Unity", "OculusSDK"],
-      summary: "Freestyle locomotion system",
-      copy: ["A short survival experience on an abandoned planet."],
-      links: {
-        color: "#363636",
-        primary: {
-          name: "Discover",
-          url: "https://samzx.itch.io/final-slash-vr"
-        },
-      },
-      images: [
-        "/slash/1.jpg",
-        "/slash/2.jpg",
-        "/slash/3.jpg"
-      ]
-    },
-    {
       name: "More works",
       links: {
         color: "#363636",
