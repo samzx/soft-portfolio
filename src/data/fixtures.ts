@@ -91,7 +91,7 @@ export default {
         },
         secondary: {
           name: "Medium",
-          url: "https://medium.com/sam-xie"
+          url: "https://medium.com/@samxie"
         },
       }
     }
