@@ -29,7 +29,7 @@ export default {
   },
   screen: {
     width: {
-      mobile: 375,
+      mobile: 360,
       tablet: 600,
       desktop: 980
     },
