@@ -1,6 +1,6 @@
 # Soft Portfolio
 
-<img src="./docs/soft-portfolio-ss.jpg" />
+<img src="./public/softportfolio/screenshot.jpg" />
 
 Neumorphic inspired personal website. Showcase your projects with carousels and link up your social.
 

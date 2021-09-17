@@ -6,7 +6,7 @@ export default {
       medium: ["React", "Go", "GraphQL"],
       summary: "Facebook Messenger Analyzer",
       copy: [
-        "Discover your chat behaviour for when you don't realise you've been double texting too much."
+        "With our analytics platform, gain a new perspective from your text messages."
       ],
       links: {
         color: "#363636",
