@@ -48,15 +48,15 @@ const mutations = {
 const adjustTheme = () => {
   var html = document.getElementsByTagName('html')[0]
   var body = document.getElementsByTagName('body')[0]
-  var a = document.getElementsByTagName('a')
+  // var a = document.getElementsByTagName('a')
   if (localStore.dark) {
     body.style.setProperty("--main-color", dark.color.text)
     html.style.setProperty("--main-background-color", dark.color.background)
-    a.forEach((i) => i.style.setProperty("--link-color", dark.color.link))
+    html.style.setProperty("--link-color", dark.color.link)
   } else {
     body.style.setProperty("--main-color", light.color.text)
     html.style.setProperty("--main-background-color", light.color.background)
-    a.forEach((i) => i.style.setProperty("--link-color", light.color.link))
+    html.style.setProperty("--link-color", light.color.link)
   }
 }
 

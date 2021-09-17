@@ -5,7 +5,7 @@ export const Linked = styled.a`
   width: 0%;
   content: "";
   height: 2px;
-  background: #3B70A2;
+  background: var(--link-color);
   position: absolute;
   left: 0;
   bottom: -3px;
