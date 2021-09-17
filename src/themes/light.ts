@@ -5,7 +5,7 @@ export default {
     }
   },
   color: {
-    link: "#3B70A2",
+    link: "#005c89",
     text: "#222",
     background: "#eee",
   },
