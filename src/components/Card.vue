@@ -68,6 +68,8 @@ const Card = styled.div`
   @media screen and (max-width: ${({theme}) => theme.screen.width.tablet}px) {
     width: ${({theme}) => theme.screen.width.mobile}px;
   }
+  /* Disabled for performance issues */
+  /* backdrop-filter: blur(10px); */
 `
 
 const Contents = styled.div`

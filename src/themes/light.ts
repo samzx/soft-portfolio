@@ -1,20 +1,20 @@
 export default {
   hero: {
     background: {
-      image: "/flight-light.jpg",
+      image: "/falcon-light.png",
     }
   },
   color: {
     link: "#005c89",
     text: "#222",
-    background: "#eee",
+    background: "#e5e5e5",
   },
   card: {
-    background: "radial-gradient(118.99% 670.46% at -7.06% -9.5%, #FFFFFF 0%, #F1F1F1 100%)",
+    background: "#f8f8f8",
     boxShadow: "20px 20px 60px rgba(0, 0, 0, 0.05), -20px -20px 60px rgba(255, 255, 255, 0.8)",
     carousel: {
       opacity: 1,
-      boxShadow: "-10px -10px 30px rgba(255, 255, 255, 0.8), 10px 10px 30px rgba(0, 0, 0, 0.05)"
+      boxShadow: "-10px -10px 30px rgba(255, 255, 255, 0), 10px 10px 30px rgba(0, 0, 0, 0.05)"
     },
     button: {
       text: "#222",

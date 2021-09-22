@@ -1,7 +1,7 @@
 export default {
   hero: {
     background: {
-      image: "/flight-mid.jpg",
+      image: "/falcon-dark.png",
     }
   },
   color: {
@@ -10,11 +10,11 @@ export default {
     background: "#222",
   },
   card: {
-    background: "radial-gradient(118.99% 670.46% at -7.06% -9.5%, #191919 0%, #0a0a0a 100%)",
+    background: "#141414",
     boxShadow: "20px 20px 60px rgba(0, 0, 0, 0.5), -20px -20px 60px rgba(255, 255, 255, 0.05)",
     carousel: {
       opacity: 1,
-      boxShadow: "-10px -10px 30px rgba(255, 255, 255, 0.05), 10px 10px 30px rgba(0, 0, 0, 0.8)"
+      boxShadow: "-10px -10px 30px rgba(255, 255, 255, 0), 10px 10px 30px rgba(0, 0, 0, 1)"
     },
     button: {
       text: "#fff",
