@@ -7,7 +7,7 @@ export default {
   color: {
     link: "#005c89",
     text: "#222",
-    background: "linear-gradient(135deg, #fff 0%, #ddd 50%, #ddd 100%)",
+    background: "linear-gradient(160deg, #fff 0%, #ddd 40%, #ddd 100%)",
   },
   card: {
     background: "#f8f8f8",
