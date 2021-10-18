@@ -16,11 +16,11 @@ export default {
         }
       },
       images: [
-        "/doubletext/Product Hunt 6.jpg",
-        "/doubletext/Product Hunt 5.jpg",
-        "/doubletext/Product Hunt 2.jpg",
-        "/doubletext/Product Hunt 3.jpg",
-        "/doubletext/Product Hunt 4.jpg",
+        "/doubletext/1.jpg",
+        "/doubletext/2.jpg",
+        "/doubletext/3.jpg",
+        "/doubletext/4.jpg",
+        "/doubletext/5.jpg",
       ]
     },
     {
