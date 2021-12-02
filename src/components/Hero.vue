@@ -3,7 +3,7 @@
     <container>
       <text-container>
         <heading>{{author}}</heading>
-        <subtitle>Software engineer at <linked href="https://squareup.com/au/en/about" target="_blank">Square</linked>.</subtitle>
+        <subtitle>Software engineer at <linked href="https://cash.app/" target="_blank">Cash App</linked>.</subtitle>
         <paragraph>Building reliable and scalable systems by day. Leveraging technology to launch fully featured <linked href="/#products">products</linked> by night.</paragraph>
         <social-links>
           <social-link-text><linked href="https://twitter.com/samxstudio" target="_blank"><i class="fab fa-twitter"></i> Twitter</linked></social-link-text>
