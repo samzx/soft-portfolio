@@ -2,7 +2,7 @@ export default {
   author: "Sam Xie",
   products: [
     {
-      name: "Double Text",
+      name: "DoubleText",
       medium: ["React", "Go", "GraphQL"],
       summary: "Facebook Messenger Analyzer",
       copy: [
