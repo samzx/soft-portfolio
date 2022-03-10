@@ -6,7 +6,7 @@ export default {
       medium: ["React", "Go", "GraphQL"],
       summary: "Facebook Messenger Analyzer",
       copy: [
-        "With our analytics platform, gain a new perspective from your text messages."
+        "See millions of messages at a glance, without data leaving your computer."
       ],
       links: {
         color: "#363636",
