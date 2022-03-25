@@ -8,6 +8,7 @@ export default {
     link: "#4bafbd",
     text: "#fff",
     background: "linear-gradient(160deg, #2a2a2a 0%, #1a1a1a 40%, #1a1a1a 100%)",
+    fallbackBackground: "#2a2a2a",
   },
   card: {
     background: "#141414",

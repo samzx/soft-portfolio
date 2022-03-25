@@ -46,17 +46,16 @@ const mutations = {
 
 // Hack until createGlobalStyles comes to vue-styled-components
 const adjustTheme = () => {
-  var html = document.getElementsByTagName('html')[0]
-  var body = document.getElementsByTagName('body')[0]
-  // var a = document.getElementsByTagName('a')
   if (localStore.dark) {
-    body.style.setProperty("--main-color", dark.color.text)
-    html.style.setProperty("--main-background-color", dark.color.background)
-    html.style.setProperty("--link-color", dark.color.link)
+    document.documentElement.style.setProperty("--main-color", dark.color.text)
+    document.documentElement.style.setProperty("--main-background-color", dark.color.background)
+    document.documentElement.style.setProperty("--fallback-background-color", dark.color.fallbackBackground)
+    document.documentElement.style.setProperty("--link-color", dark.color.link)
   } else {
-    body.style.setProperty("--main-color", light.color.text)
-    html.style.setProperty("--main-background-color", light.color.background)
-    html.style.setProperty("--link-color", light.color.link)
+    document.documentElement.style.setProperty("--main-color", light.color.text)
+    document.documentElement.style.setProperty("--main-background-color", light.color.background)
+    document.documentElement.style.setProperty("--fallback-background-color", light.color.fallbackBackground)
+    document.documentElement.style.setProperty("--link-color", light.color.link)
   }
 }
 
@@ -73,6 +72,20 @@ if (window.matchMedia) {
   } catch(e) {
     console.error(e)
   }
+}
+
+const setup = () => {
+  if(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    localStore.dark = true
+  } else {
+    localStore.dark = false
+  }
+  adjustTheme()
+
+  var html = document.getElementsByTagName('html')[0]
+  html.style.setProperty("transition", "0.3s color, 0.3s background")
+  var body = document.getElementsByTagName('body')[0]
+  body.style.setProperty("transition", "0.3s color, 0.3s background")
 }
 
 injectGlobal`
@@ -175,29 +188,16 @@ export default {
   },
   data: () => ({
     ...baseData
-  }),
-  mounted() {
-    if(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-      localStore.dark = true
-    } else {
-      localStore.dark = false
-    }
-    adjustTheme()
-    // Avoid buggy animations
-    setTimeout(() => {
-      var html = document.getElementsByTagName('html')[0]
-      html.style.setProperty("transition", "0.3s color, 0.3s background")
-      var body = document.getElementsByTagName('body')[0]
-      body.style.setProperty("transition", "0.3s color, 0.3s background")
-    }, 300)
-  }
+  })
 }
+setup()
 </script>
 
 <style>
 /* Hack until createGlobalStyles comes to vue-styled-components */
 html {
   background: var(--main-background-color);
+  background-color: var(--fallback-background-color);
 }
 
 body {
