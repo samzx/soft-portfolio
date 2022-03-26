@@ -23,23 +23,21 @@ export default {
       ]
     },
     {
-      name: "Volunteer Portal",
-      medium: ["React", "Rails", "GraphQL"],
-      summary: "Volunteering Events Portal",
-      copy: ["An event calendar focused on tracking and reporting volunteering opportunities."],
+      name: "ClimbList",
+      medium: ["React", "Next.js"],
+      summary: "Climbing gym discovery",
+      copy: [
+        "The comparison site for climbers — coming soon."
+      ],
       links: {
         color: "#363636",
         primary: {
-          name: "Github",
-          url: "https://github.com/zendesk/volunteer_portal"
-        },
-        secondary: {
-          name: "Demo",
-          url: "https://volunteer-portal-demo.herokuapp.com/"
+          name: "Coming Soon",
+          url: "https://climblist.com/"
         }
       },
       images: [
-        "/volunteerportal/1.jpg"
+        "/climblist/1.jpg",
       ]
     },
     {

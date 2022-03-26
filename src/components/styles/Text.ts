@@ -22,7 +22,7 @@ export const Subtitle = styled.h2`
   margin-bottom: 4px;
   letter-spacing: 1px;
   font-weight: 400;
-  font-style: italic;
+  /* font-style: italic; */
 `
 
 export const Paragraph = styled.p`
