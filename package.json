@@ -8,6 +8,7 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "@types/styled-components": "^5.1.24",
     "core-js": "^3.6.4",
     "vue": "^2.6.11",
     "vue-carousel": "^0.18.0",
