@@ -16,6 +16,7 @@ export default {
         }
       },
       images: [
+        "/doubletext/0.jpg",
         "/doubletext/1.jpg",
         "/doubletext/2.jpg",
         "/doubletext/3.jpg",
@@ -37,6 +38,7 @@ export default {
         }
       },
       images: [
+        "/climblist/0.jpg",
         "/climblist/1.jpg",
       ]
     },
