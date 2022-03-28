@@ -3,12 +3,8 @@
     <contents>
       <left-container>
         <div>
-          <product-title>{{name}}</product-title>
-          <medium>
-            <medium-item v-for="(item, index) in medium" :key="`medium-item-${index}`">
-                <span>{{item}}</span><span v-if="index != medium.length - 1"> · </span>
-            </medium-item>
-          </medium>
+          <main-title>{{name}}</main-title>
+          <medium>{{medium}}</medium>
           <carousel-container v-if="windowWidth <= 980">
             <styled-carousel v-if="images" :perPage="1" :paginationActiveColor="links.color">
               <slide v-for="(image, index) in images" :key="index">
@@ -26,14 +22,14 @@
             :color="links.color"
             v-bind:href="links.primary.url"
             target="_blank"
-          >{{links.primary.name}}</styled-button>
+          >{{links.primary.name}} <i class="fas fa-arrow-right"></i></styled-button>
           <styled-button
             v-if="links.secondary"
             secondary
             :color="links.color"
             v-bind:href="links.secondary.url"
             target="_blank"
-          >{{links.secondary.name}}</styled-button>
+          >{{links.secondary.name}} <i class="fas fa-arrow-right"></i></styled-button>
         </button-container>
       </left-container>
       <carousel-container v-if="windowWidth > 980">
@@ -50,7 +46,7 @@
 <script>
 import styled from 'vue-styled-components'
 import { Carousel, Slide } from 'vue-carousel'
-import { Subtitle, Paragraph } from './styles/Text.ts'
+import { Subtitle, Paragraph, MainTitle } from './styles/Text.ts'
 
 const Card = styled.div`
   width: ${({theme}) => theme.screen.width.desktop}px;
@@ -58,15 +54,16 @@ const Card = styled.div`
   box-shadow: ${({theme}) => theme.card.boxShadow};
   border-radius: 20px;
   margin: auto;
-  position: relative;
   margin-bottom: 80px;
   /* Can't transition radial gradients */
   /* transition: 0.3s background; */
   @media screen and (max-width: ${({theme}) => theme.screen.width.desktop}px) {
     width: ${({theme}) => theme.screen.width.tablet}px;
+    margin-bottom: 40px;
   }
   @media screen and (max-width: ${({theme}) => theme.screen.width.tablet}px) {
     width: ${({theme}) => theme.screen.width.mobile}px;
+    margin-bottom: 40px;
   }
   /* Disabled for performance issues */
   /* backdrop-filter: blur(10px); */
@@ -105,24 +102,11 @@ const LeftContainer = styled.div`
   }
 `
 
-const ProductTitle = styled.h1`
-  font-size: 36px;
-  margin-top: 0px;
-  letter-spacing: 0.5px;
-  margin-bottom: 8px;
-`
-
 const Medium = styled.div`
   font-weight: 300;
   font-size: 18px;
   letter-spacing: 1.8px;
   margin-bottom: 24px;
-`
-
-const MediumItem = styled.span`
-  font-weight: 300;
-  font-size: 18px;
-  letter-spacing: 1.8px;
 `
 
 const btnContainerProps = { empty: Boolean }
@@ -134,7 +118,7 @@ const ButtonContainer = styled('div', btnContainerProps)`
 `
 
 const btnProps = { primary: Boolean, secondary: Boolean, color: String }
-const StyledButton = styled('a', btnProps)`
+export const StyledButton = styled('a', btnProps)`
   font-size: 12px;
   letter-spacing: 1.2px;
   text-transform: uppercase;
@@ -237,7 +221,7 @@ export default {
     Card,
     Contents,
     LeftContainer,
-    ProductTitle,
+    MainTitle,
     Subtitle,
     Paragraph,
     ButtonContainer,
@@ -245,12 +229,11 @@ export default {
     CarouselImage,
     CarouselContainer,
     StyledCarousel,
-    Medium,
-    MediumItem
+    Medium
   },
   props: {
     name: String,
-    medium: Array,
+    medium: String,
     summary: String,
     copy: Array,
     links: {

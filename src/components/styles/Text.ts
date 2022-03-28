@@ -17,9 +17,17 @@ export const Linked = styled.a`
 }
 `
 
+export const MainTitle = styled.h1`
+  font-size: 36px;
+  margin-top: 0px;
+  letter-spacing: 0.5px;
+  margin-bottom: 8px;
+`
+
 export const Subtitle = styled.h2`
   font-size: 18px;
-  margin-bottom: 4px;
+  /* margin-bottom: 4px; */
+  margin-bottom: 12px;
   letter-spacing: 1px;
   font-weight: 400;
   /* font-style: italic; */

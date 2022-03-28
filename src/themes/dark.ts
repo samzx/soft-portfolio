@@ -11,7 +11,9 @@ export default {
     fallbackBackground: "#2a2a2a",
   },
   card: {
-    background: "#141414",
+    // background: "#141414",
+    background: "radial-gradient(145% 145.46% at 0% 0%, #111 0%, #000 100%)",
+    // background: "linear-gradient(135deg, #111 0%, #000 100%)",
     boxShadow: "20px 20px 60px rgba(0, 0, 0, 0.5), -20px -20px 60px rgba(255, 255, 255, 0.05)",
     carousel: {
       opacity: 1,
