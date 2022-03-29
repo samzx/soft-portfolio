@@ -2,10 +2,13 @@
   <theme-provider :theme="theme">
     <hero
       v-bind:author="author"
+      v-bind:subtitle="hero.subtitle"
+      v-bind:description="hero.description"
+      v-bind:cta="hero.cta"
     />
     <card-container id="products">
       <card
-        v-for="(product, index) in products" :key="index"
+        v-for="(product, index) in products.featured" :key="index"
         v-bind:name="product.name"
         v-bind:medium="product.medium"
         v-bind:summary="product.summary"
@@ -13,8 +16,26 @@
         v-bind:links="product.links"
         v-bind:images="product.images"
       />
+      <minor-card-container>
+        <minor-card
+          v-for="(product, index) in products.minor && products.minor.slice(0,3)" :key="index"
+          v-bind:name="product.name"
+          v-bind:description="product.description"
+          v-bind:link="product.link"
+        />
+      </minor-card-container>
+      <logo-section-container>
+        <main-title>{{logoSection.title}}</main-title>
+        <logo-container>
+          <logo-card
+            v-for="(logo, index) in logoSection.logos && logoSection.logos.slice(0,3)" :key="index"
+            v-bind:src="logo.src"
+            v-bind:url="logo.url"
+          />
+        </logo-container>
+      </logo-section-container>
     </card-container>
-    <foot v-bind:author="author" v-bind:links="links" />
+    <foot v-bind:author="author" v-bind:footer="footer" />
     <light-toggle v-on:click="toggleTheme()"><span v-if="!isDark" >💡</span><span v-if="isDark">💡</span></light-toggle>
   </theme-provider>
 </template>
@@ -24,9 +45,12 @@ import Vue from 'vue'
 import styled from 'vue-styled-components'
 import Hero from './components/Hero.vue'
 import Card from './components/Card.vue'
+import MinorCard from './components/MinorCard.vue'
+import LogoCard from './components/LogoCard.vue'
 import Foot from './components/Foot.vue'
 import { ThemeProvider, injectGlobal } from 'vue-styled-components'
 
+import { MainTitle } from './components/styles/Text.ts'
 import baseData from './data/fixtures.ts'
 import light from './themes/light.ts'
 import dark from './themes/dark.ts'
@@ -142,6 +166,71 @@ const CardContainer = styled.div`
   }
 `
 
+const MinorCardContainer = styled.div`
+  margin: auto;
+  margin-bottom: 80px;
+  width: ${({theme}) => theme.screen.width.desktop}px;
+  display: flex;
+  @media screen and (max-width: ${({theme}) => theme.screen.width.desktop}px) {
+    width: ${({theme}) => theme.screen.width.tablet}px;
+    flex-direction: column;
+  }
+  @media screen and (max-width: ${({theme}) => theme.screen.width.tablet}px) {
+    width: ${({theme}) => theme.screen.width.mobile}px;
+    flex-direction: column;
+  }
+  & > * {
+    margin: 16px;
+  }
+  & > *:nth-child(3n+1) {
+    margin-left: 0px;
+  }
+  & > *:nth-child(3n+0) {
+    margin-right: 0px;
+  }
+  @media screen and (max-width: ${({theme}) => theme.screen.width.desktop}px) {
+    & > * {
+      margin: 16px 0px;
+    & > *:nth-child(3n+1) {
+      margin: 16px 0px;
+    }
+    & > *:nth-child(3n+0) {
+      margin: 16px 0px;
+    }
+  }
+  }
+`
+
+const LogoSectionContainer = styled.div`
+  margin:auto;
+  text-align: center;
+  width: ${({theme}) => theme.screen.width.desktop}px;
+  @media screen and (max-width: ${({theme}) => theme.screen.width.desktop}px) {
+    width: ${({theme}) => theme.screen.width.tablet}px;
+    flex-direction: column;
+  }
+  @media screen and (max-width: ${({theme}) => theme.screen.width.tablet}px) {
+    width: ${({theme}) => theme.screen.width.mobile}px;
+    flex-direction: column;
+  }
+`
+
+const LogoContainer = styled.div`
+  justify-content: center;
+  margin:auto;
+  margin-top: 20px;
+  width: ${({theme}) => theme.screen.width.desktop}px;
+  display: flex;
+  @media screen and (max-width: ${({theme}) => theme.screen.width.desktop}px) {
+    width: ${({theme}) => theme.screen.width.tablet}px;
+    flex-direction: column;
+  }
+  @media screen and (max-width: ${({theme}) => theme.screen.width.tablet}px) {
+    width: ${({theme}) => theme.screen.width.mobile}px;
+    flex-direction: column;
+  }
+`
+
 const LightToggle = styled.button`
   border: none;
   background: transparent;
@@ -167,10 +256,16 @@ export default {
   components: {
     Hero,
     Card,
+    MinorCard,
+    MinorCardContainer,
     Foot,
     ThemeProvider,
     CardContainer,
-    LightToggle
+    LightToggle,
+    MainTitle,
+    LogoContainer,
+    LogoSectionContainer,
+    LogoCard
   },
   computed: {
     theme() {
