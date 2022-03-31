@@ -6,7 +6,7 @@
           <main-title>{{name}}</main-title>
           <medium>{{medium}}</medium>
           <carousel-container v-if="windowWidth <= 980">
-            <styled-carousel v-if="images" :perPage="1" :paginationActiveColor="links.color">
+            <styled-carousel v-if="images" :perPage="1">
               <slide v-for="(image, index) in images" :key="index">
                 <carousel-image loading="lazy" v-bind:src="image"/>
               </slide>
@@ -33,7 +33,7 @@
         </button-container>
       </left-container>
       <carousel-container v-if="windowWidth > 980">
-        <styled-carousel v-if="images" :perPage="1" :paginationActiveColor="links.color">
+        <styled-carousel v-if="images" :perPage="1">
           <slide v-for="(image, index) in images" :key="index">
             <carousel-image loading="lazy" v-bind:src="image"/>
           </slide>
@@ -190,11 +190,13 @@ const StyledCarousel = styled(Carousel)`
 
 & > * > * > .VueCarousel-dot {
   margin-top: 0px !important;
-  /* outline: none !important; */
+  background-color: rgb(127 127 127 / 25%) !important;
   transition: 0.3s background-color ease-in-out;
+  /* outline: none !important; */
 }
 
 & > * > * > .VueCarousel-dot--active {
+  background-color: rgb(127 127 127) !important;
   transition: 0.3s background-color ease-in-out;
   /* outline: none !important; */
 }
