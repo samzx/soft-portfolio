@@ -22,14 +22,14 @@
             :color="links.color"
             v-bind:href="links.primary.url"
             target="_blank"
-          >{{links.primary.name}} <i class="fas fa-arrow-right"></i></styled-button>
+          ><button-text>{{links.primary.name}}</button-text><i class="fas fa-arrow-right"></i></styled-button>
           <styled-button
             v-if="links.secondary"
             secondary
             :color="links.color"
             v-bind:href="links.secondary.url"
             target="_blank"
-          >{{links.secondary.name}} <i class="fas fa-arrow-right"></i></styled-button>
+          ><button-text>{{links.secondary.name}}</button-text><i class="fas fa-arrow-right"></i></styled-button>
         </button-container>
       </left-container>
       <carousel-container v-if="windowWidth > 980">
@@ -46,7 +46,7 @@
 <script>
 import styled from 'vue-styled-components'
 import { Carousel, Slide } from 'vue-carousel'
-import { Subtitle, Paragraph, MainTitle } from './styles/Text.ts'
+import { Subtitle, Paragraph, MainTitle, ButtonText } from './styles/Text.ts'
 
 const Card = styled.div`
   width: ${({theme}) => theme.screen.width.desktop}px;
@@ -104,9 +104,9 @@ const LeftContainer = styled.div`
 
 const Medium = styled.div`
   font-weight: 300;
-  font-size: 18px;
+  font-size: 0.75rem;
   letter-spacing: 1.8px;
-  margin-bottom: 24px;
+  margin-bottom: 1.5em;
 `
 
 const btnContainerProps = { empty: Boolean }
@@ -119,10 +119,10 @@ const ButtonContainer = styled('div', btnContainerProps)`
 
 const btnProps = { primary: Boolean, secondary: Boolean, color: String }
 export const StyledButton = styled('a', btnProps)`
-  font-size: 12px;
+  font-size: 0.66rem;
   letter-spacing: 1.2px;
   text-transform: uppercase;
-  padding: 14px 32px;
+  padding: 0.75rem 1.5rem;
   font-weight: bold;
   margin-right: 20px;
   border-radius: 24px;
@@ -231,7 +231,8 @@ export default {
     CarouselImage,
     CarouselContainer,
     StyledCarousel,
-    Medium
+    Medium,
+    ButtonText
   },
   props: {
     name: String,

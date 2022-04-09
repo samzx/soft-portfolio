@@ -18,26 +18,24 @@ export const Linked = styled.a`
 `
 
 export const MainTitle = styled.h1`
-  font-size: 36px;
+  font-size: 2rem;
   margin-top: 0px;
-  letter-spacing: 0.5px;
+  letter-spacing: 1.5px;
   margin-bottom: 8px;
 `
 
-export const Subtitle = styled.h2`
-  font-size: 18px;
-  /* margin-bottom: 4px; */
-  margin-bottom: 12px;
-  letter-spacing: 1px;
-  font-weight: 400;
-  /* font-style: italic; */
+export const Paragraph = styled.p`
+  font-size: 1rem;
+  margin: 0 0 0.5em 0;
+  line-height: 1.47059;
+  letter-spacing: 0.5px;
+  font-weight: 300;
 `
 
-export const Paragraph = styled.p`
-  font-size: 18px;
-  margin: 0px 0px 20px 0px;
-  line-height: 1.47059;
-  letter-spacing: 0.25px;
-  font-weight: 300;
-  margin-bottom: 0;
+export const Subtitle = styled(Paragraph)`
+  font-weight: 400;
+`
+
+export const ButtonText = styled.span`
+  margin-right: 0.5em;
 `

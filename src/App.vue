@@ -31,6 +31,7 @@
             v-for="(logo, index) in logoSection.logos && logoSection.logos.slice(0,3)" :key="index"
             v-bind:src="logo.src"
             v-bind:url="logo.url"
+            v-bind:alt="logo.alt"
           />
         </logo-container>
       </logo-section-container>
@@ -127,12 +128,6 @@ injectGlobal`
     font-family: "SF Pro Display";
     font-weight: 300;
     src: url("/fonts/SFProDisplay-Light.ttf");
-  }
-  @font-face {
-    font-family: "SF Pro Display";
-    font-weight: 400;
-    font-style: italic;
-    src: url("/fonts/SFProDisplay-RegularItalic.ttf");
   }
 
   html {

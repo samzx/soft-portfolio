@@ -1,7 +1,7 @@
 <template>
-  <styled-a v-bind:href="url" target="_blank">
+  <styled-a v-bind:href="url" target="_blank" v-bind:aria-label="alt">
     <card>
-        <logo v-bind:src="src"></logo>
+        <logo v-bind:src="src" v-bind:alt="alt"></logo>
     </card>
   </styled-a>
 </template>
@@ -10,18 +10,17 @@
 import styled from 'vue-styled-components'
 
 const StyledA = styled.a`
-  margin: 36px 16px;
+  margin: 2rem 1rem;
   @media screen and (max-width: ${({theme}) => theme.screen.width.desktop}px) {
-    margin: 18px 8px;
+    margin: 1rem 0.5rem;
   }
   @media screen and (max-width: ${({theme}) => theme.screen.width.tablet}px) {
-    margin: 18px 8px;
+    margin: 1rem 0.5rem;
   }
 `
 
 const Card = styled.div`
-  /* width: 240px; */
-  height: 40px;
+  height: 2rem;
   flex: 1;
   display: flex;
   justify-content: space-between;
@@ -30,7 +29,7 @@ const Card = styled.div`
   /* background: radial-gradient(118.99% 670.46% at -7.06% -9.5%, #FFFFFF 0%, #F1F1F1 100%); */
   box-shadow: ${({theme}) => theme.card.boxShadow};
   border-radius: 20px;
-  padding: 36px 48px;
+  padding: 2rem 2.66rem;
   position: relative;
   /* Can't transition radial gradients */
   /* transition: 0.3s background; */
@@ -65,7 +64,8 @@ export default {
   },
   props: {
     src: String,
-    url: String
+    url: String,
+    alt: String
   }
 }
 </script>

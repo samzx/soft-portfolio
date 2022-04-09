@@ -17,7 +17,6 @@ const AppFooter = styled.div`
   margin: 64px auto;
   padding: 0px ${({theme}) => theme.screen.padding.desktop}px;
   display: flex;
-  font-size: 18px;
   font-weight: bold;
   flex-direction: column;
 

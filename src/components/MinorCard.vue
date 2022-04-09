@@ -5,14 +5,14 @@
       <paragraph>{{description}}</paragraph>
     </contents>
     <div>
-      <styled-button v-bind:href="link.url" target="_blank" >{{link.name}} <i class="fas fa-arrow-right"></i></styled-button>
+      <styled-button v-bind:href="link.url" target="_blank" ><button-text>{{link.name}}</button-text><i class="fas fa-arrow-right"></i></styled-button>
     </div>
   </card>
 </template>
 
 <script>
 import styled from 'vue-styled-components'
-import { Paragraph } from './styles/Text.ts'
+import { Paragraph, ButtonText } from './styles/Text.ts'
 
 const Card = styled.div`
   /* width: 100px; */
@@ -57,10 +57,10 @@ const Contents = styled.div`
 const StyledButton = styled.a`
   display: block;
   width: fit-content;
-  font-size: 12px;
+  font-size: 0.7rem;
   letter-spacing: 1.2px;
   text-transform: uppercase;
-  padding: 4px;
+  padding: 0.25rem;
   padding-left: 0px;
   font-weight: bold;
   margin-right: 20px;
@@ -81,7 +81,8 @@ export default {
     ProductTitle,
     Paragraph,
     Contents,
-    StyledButton
+    StyledButton,
+    ButtonText
   },
   props: {
     name: String,

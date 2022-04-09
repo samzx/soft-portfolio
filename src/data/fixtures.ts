@@ -9,8 +9,8 @@ export default {
     featured: [
       {
         name: "DoubleText",
-        medium: "React · Go · GraphQL",
-        summary: "Facebook Messenger Analyzer",
+        medium: "React · GraphQL · Golang",
+        summary: "The #1 Facebook Messenger analyzer.",
         copy: [
           "See millions of messages at a glance, without data leaving your computer."
         ],
@@ -32,14 +32,14 @@ export default {
       {
         name: "ClimbList",
         medium: "React · Next.js",
-        summary: "Climbing gym discovery",
+        summary: "Construction is now in progress.",
         copy: [
-          "The comparison site for climbers — coming soon."
+          "Compare and track grades and pricing between gyms around the country.",
         ],
         links: {
           color: "#363636",
           primary: {
-            name: "Coming Soon",
+            name: "Learn more",
             url: "https://climblist.com/"
           }
         },
@@ -53,7 +53,7 @@ export default {
     minor: [
       {
         name: "Volunteer Portal",
-        description: "Portal for tracking volunteering opportunities.",
+        description: "Find and track volunteer opportunities.",
         link: {
           name: "Github",
           url: "https://github.com/zendesk/volunteer_portal"
@@ -83,15 +83,18 @@ export default {
     logos: [
       {
         src: "/logos/unimelb.svg",
-        url: "https://unimelb.edu.au/"
+        url: "https://unimelb.edu.au/",
+        alt: "Unimelb"
       },
       {
         src: "/logos/zendesk.svg",
-        url: "https://www.zendesk.com/"
+        url: "https://www.zendesk.com/",
+        alt: "Zendesk"
       },
       {
         src: "/logos/cashapp.svg",
-        url: "https://cash.app/"
+        url: "https://cash.app/",
+        alt: "Cash App"
       }
   ]
   },
