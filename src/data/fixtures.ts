@@ -10,7 +10,7 @@ export default {
       {
         name: "DoubleText",
         medium: "React · GraphQL · Golang",
-        summary: "The #1 Facebook Messenger analyzer.",
+        summary: "The #1 Facebook chat analyzer.",
         copy: [
           "See millions of messages at a glance, without data leaving your computer."
         ],
@@ -34,7 +34,7 @@ export default {
         medium: "React · Next.js",
         summary: "Construction is now in progress.",
         copy: [
-          "Compare and track grades and pricing between gyms around the country.",
+          "Compare and track grades between gyms around the country.",
         ],
         links: {
           color: "#363636",
@@ -61,7 +61,7 @@ export default {
       },
       {
         name: "Final Slash VR",
-        description: "Short survival experience on an abandoned planet.",
+        description: "Survival experience on an abandoned planet.",
         link: {
           name: "Download",
           url: "https://samzx.itch.io/final-slash-vr"

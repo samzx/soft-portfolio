@@ -20,15 +20,14 @@ export const Linked = styled.a`
 export const MainTitle = styled.h1`
   font-size: 2rem;
   margin-top: 0px;
-  letter-spacing: 1.5px;
   margin-bottom: 8px;
 `
 
-export const Paragraph = styled.p`
-  font-size: 1rem;
+const paragraphProps = { size: String}
+export const Paragraph = styled('p', paragraphProps)`
+  font-size: ${(props) => props.size === 's' ? "0.8888rem" : "1rem"};
   margin: 0 0 0.5em 0;
-  line-height: 1.47059;
-  letter-spacing: 0.5px;
+  line-height: 1.5;
   font-weight: 300;
 `
 

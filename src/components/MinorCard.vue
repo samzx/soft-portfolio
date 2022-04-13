@@ -44,7 +44,6 @@ const Card = styled.div`
 const ProductTitle = styled.h1`
   font-size: 24px;
   margin-top: 0px;
-  letter-spacing: 0.5px;
   margin-bottom: 8px;
 `
 
@@ -58,7 +57,7 @@ const StyledButton = styled.a`
   display: block;
   width: fit-content;
   font-size: 0.7rem;
-  letter-spacing: 1.2px;
+  letter-spacing: 0.75px;
   text-transform: uppercase;
   padding: 0.25rem;
   padding-left: 0px;

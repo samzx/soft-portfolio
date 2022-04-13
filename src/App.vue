@@ -114,7 +114,7 @@ const setup = () => {
 }
 
 injectGlobal`
-  @font-face {
+  /* @font-face {
     font-family: "SF Pro Display";
     font-weight: 400;
     src: url("/fonts/SFProDisplay-Regular.ttf");
@@ -128,10 +128,10 @@ injectGlobal`
     font-family: "SF Pro Display";
     font-weight: 300;
     src: url("/fonts/SFProDisplay-Light.ttf");
-  }
+  } */
 
   html {
-    font-family: 'SF Pro Display', -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-family: 'Inter', sans-serif;
     font-size: 18px;
     -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
