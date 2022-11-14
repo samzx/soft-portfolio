@@ -26,28 +26,27 @@ export default {
           "/doubletext/1.jpg",
           "/doubletext/2.jpg",
           "/doubletext/3.jpg",
-          "/doubletext/4.jpg"
         ]
       },
-      {
-        name: "ClimbList",
-        medium: "React · Next.js",
-        summary: "Construction is now in progress.",
-        copy: [
-          "Compare and track grades and pricing between gyms around the country.",
-        ],
-        links: {
-          color: "#363636",
-          primary: {
-            name: "Learn more",
-            url: "https://climblist.com/"
-          }
-        },
-        images: [
-          "/climblist/0.jpg",
-          "/climblist/1.jpg",
-        ]
-      }
+      // {
+      //   name: "ClimbList",
+      //   medium: "React · Next.js",
+      //   summary: "Construction is now in progress.",
+      //   copy: [
+      //     "Compare and track grades and pricing between gyms around the country.",
+      //   ],
+      //   links: {
+      //     color: "#363636",
+      //     primary: {
+      //       name: "Learn more",
+      //       url: "https://climblist.com/"
+      //     }
+      //   },
+      //   images: [
+      //     "/climblist/0.jpg",
+      //     "/climblist/1.jpg",
+      //   ]
+      // }
     ],
     // Only supports 0-3 at the moment
     minor: [
@@ -60,19 +59,19 @@ export default {
         }
       },
       {
-        name: "Final Slash VR",
+        name: "Weightless VR",
         description: "Short survival experience on an abandoned planet.",
         link: {
           name: "Download",
-          url: "https://samzx.itch.io/final-slash-vr"
+          url: "https://samzx.itch.io/weightless-vr"
         }
       },
       {
-        name: "MPH Watch",
-        description: "Stats for miners mining on Mining Pool Hub.",
+        name: "Soft Portfolio",
+        description: "Neumorphic personal portfolio website.",
         link: {
-          name: "Demo",
-          url: "https://mphwatch.samxie.net/demo"
+          name: "Github",
+          url: "https://github.com/samzx/soft-portfolio"
         }
       }
     ]
