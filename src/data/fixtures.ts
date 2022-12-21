@@ -10,7 +10,7 @@ export default {
       {
         name: "DoubleText",
         medium: "React · GraphQL · Golang",
-        summary: "The #1 Facebook Messenger and WhatsApp chat analyzer.",
+        summary: "The only multi-platform chat analyzer.",
         copy: [
           "See millions of messages at a glance, without data leaving your computer."
         ],
