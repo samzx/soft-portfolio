@@ -6,7 +6,7 @@ export default {
   },
   color: {
     link: "#005c89",
-    text: "#222",
+    text: "#1d1d1f",
     background: "linear-gradient(160deg, #efefef 0%, #ddd 40%, #ddd 100%)",
     fallbackBackground: "#fff",
   },
@@ -20,11 +20,10 @@ export default {
     },
     button: {
       text: "#222",
-      background:  "#fafafa",
+      background:  "#efefef",
       boxShadow: {
         primary: "2px 4px 4px rgba(0,0,0,0.05), inset 1px 1px 2px hsla(0,0%,100%,0.25)",
-        // secondary: "-4px -4px 10px rgba(255, 255, 255, 1), 4px 4px 10px rgba(0, 0, 0, 0.1)",
-        secondary: "2px 4px 4px rgba(0,0,0,0.05), inset 1px 1px 2px hsla(0,0%,100%,0.25)",
+        secondary: "2px 4px 4px rgba(0,0,0,0.05), inset 1px 1px 2px hsla(0,0%,100%,0.5)",
         hover: "linear-gradient(145deg, rgba(0,0,0,0.05), rgba(255,255,255,0.2))"
       },
       hoverIntensity: 1

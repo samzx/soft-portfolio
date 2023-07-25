@@ -142,6 +142,7 @@ injectGlobal`
 
   body {
     margin: 0px;
+    letter-spacing: -0.02em;
   }
 
   html {
@@ -151,6 +152,9 @@ injectGlobal`
   a {
     text-decoration: none;
     position: relative;
+  }
+  h1 {
+    font-weight: 600;
   }
 `
 

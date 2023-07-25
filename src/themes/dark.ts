@@ -6,7 +6,7 @@ export default {
   },
   color: {
     link: "#4bafbd",
-    text: "#fff",
+    text: "#f5f5f7",
     background: "linear-gradient(160deg, #2a2a2a 0%, #1a1a1a 40%, #1a1a1a 100%)",
     fallbackBackground: "#2a2a2a",
   },
@@ -21,7 +21,7 @@ export default {
     },
     button: {
       text: "#fff",
-      background:  "#0f0f0f",
+      background:  "#151515",
       boxShadow: {
         primary: "2px 4px 4px rgba(0,0,0,0.45), inset 1px 1px 2px hsla(0,0%,100%,.15)",
         secondary: "2px 4px 4px rgba(0,0,0,0.45), inset 1px 1px 2px hsla(0,0%,100%,.15)",

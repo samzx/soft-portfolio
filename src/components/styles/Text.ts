@@ -18,21 +18,21 @@ export const Linked = styled.a`
 `
 
 export const MainTitle = styled.h1`
-  font-size: 2rem;
+  font-size: 2.25rem;
   margin-top: 0px;
   margin-bottom: 8px;
 `
 
 const paragraphProps = { size: String}
 export const Paragraph = styled('p', paragraphProps)`
-  font-size: ${(props) => props.size === 's' ? "0.8888rem" : "1rem"};
+  font-size: ${(props) => props.size === 's' ? "0.8888rem" : "0.95rem"};
   margin: 0 0 0.5em 0;
   line-height: 1.5;
-  font-weight: 300;
+  font-weight: 400;
 `
 
 export const Subtitle = styled(Paragraph)`
-  font-weight: 400;
+  font-weight: 500;
 `
 
 export const ButtonText = styled.span`

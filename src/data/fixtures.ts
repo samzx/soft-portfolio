@@ -2,7 +2,7 @@ export default {
   author: "Sam Xie",
   hero: {
     subtitle: "Software engineer at Cash App.",
-    description: "Engineering large scale software by day. Launching boutique products by night.",
+    description: ["Engineering large scale software by day.", "Launching boutique products by night."],
     cta: "Browse Products",
   },
   products: {
@@ -28,25 +28,25 @@ export default {
           "/doubletext/3.jpg",
         ]
       },
-      {
-        name: "ClimbList",
-        medium: "React · Next.js",
-        summary: "Construction is now in progress.",
-        copy: [
-          "Compare and track grades between gyms around the country.",
-        ],
-        links: {
-          color: "#363636",
-          primary: {
-            name: "Learn more",
-            url: "https://climblist.com/"
-          }
-        },
-        images: [
-          "/climblist/0.jpg",
-          "/climblist/1.jpg",
-        ]
-      }
+      // {
+      //   name: "ClimbList",
+      //   medium: "React · Next.js",
+      //   summary: "Construction is now in progress.",
+      //   copy: [
+      //     "Compare and track grades between gyms around the country.",
+      //   ],
+      //   links: {
+      //     color: "#363636",
+      //     primary: {
+      //       name: "Learn more",
+      //       url: "https://climblist.com/"
+      //     }
+      //   },
+      //   images: [
+      //     "/climblist/0.jpg",
+      //     "/climblist/1.jpg",
+      //   ]
+      // }
     ],
     // Only supports 0-3 at the moment
     minor: [

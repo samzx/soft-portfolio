@@ -4,7 +4,9 @@
       <text-container>
         <heading>{{author}}</heading>
         <subtitle>{{subtitle}}</subtitle>
-        <paragraph>{{description}}</paragraph>
+        <paragraph>
+          <span v-for="(line, index) in description" :key="index">{{line}}<br/></span>
+        </paragraph>
         <cta-section>
           <styled-button secondary :color="'#363636'" v-bind:href="'/#products'"><button-text>{{cta}}</button-text><i class="fas fa-arrow-down"></i></styled-button>
         </cta-section>
@@ -68,7 +70,7 @@ const TextContainer = styled.div`
 const Heading = styled.h1`
   font-size: 5rem;
   margin: 32px auto;
-  font-weight: bold;
+  font-weight: 600;
   @media screen and (max-width: ${({theme}) => theme.screen.width.desktop}px) {
     font-size: 72px;
   }
