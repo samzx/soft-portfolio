@@ -103,10 +103,11 @@ const LeftContainer = styled.div`
 `
 
 const Medium = styled.div`
-  font-weight: 300;
+  font-weight: 400;
   font-size: 0.75rem;
   letter-spacing: 0.75px;
   margin-bottom: 1.5em;
+  opacity: 0.8;
 `
 
 const btnContainerProps = { empty: Boolean }
@@ -123,7 +124,7 @@ export const StyledButton = styled('a', btnProps)`
   letter-spacing: 0.75px;
   text-transform: uppercase;
   padding: 0.75rem 1.5rem;
-  font-weight: bold;
+  font-weight: 600;
   margin-right: 20px;
   border-radius: 24px;
   line-height: 40px;

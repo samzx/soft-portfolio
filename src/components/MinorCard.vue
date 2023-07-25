@@ -61,7 +61,7 @@ const StyledButton = styled.a`
   text-transform: uppercase;
   padding: 0.25rem;
   padding-left: 0px;
-  font-weight: bold;
+  font-weight: 600;
   margin-right: 20px;
   line-height: 40px;
   color: ${(props) => props.theme.color.text};

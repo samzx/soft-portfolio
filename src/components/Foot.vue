@@ -17,7 +17,7 @@ const AppFooter = styled.div`
   margin: 64px auto;
   padding: 0px ${({theme}) => theme.screen.padding.desktop}px;
   display: flex;
-  font-weight: bold;
+  font-weight: 600;
   flex-direction: column;
 
   @media screen and (max-width: ${({theme}) => theme.screen.width.desktop}px) {
