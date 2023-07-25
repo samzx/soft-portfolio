@@ -2,7 +2,7 @@ export default {
   author: "Sam Xie",
   hero: {
     subtitle: "Software engineer at Cash App.",
-    description: "Building reliable and scalable systems by day. Leveraging technology to launch fully featured products by night.",
+    description: "Engineering large scale software by day. Launching boutique products by night.",
     cta: "Browse Products",
   },
   products: {
@@ -10,9 +10,9 @@ export default {
       {
         name: "DoubleText",
         medium: "React · GraphQL · Golang",
-        summary: "The only multi-platform chat analyzer.",
+        summary: "The #1 Texting Analysis App.",
         copy: [
-          "See millions of messages at a glance, without data leaving your computer."
+          "Learn from millions of your messages, without giving up your data or privacy."
         ],
         links: {
           color: "#363636",

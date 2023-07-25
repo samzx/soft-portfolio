@@ -12,9 +12,9 @@ export default {
   },
   card: {
     // background: "#141414",
-    background: "radial-gradient(145% 145.46% at 0% 0%, #111 0%, #000 100%)",
+    background: "linear-gradient(141.65deg,#151515 15.17%,#050505 86.5%)",
     // background: "linear-gradient(135deg, #111 0%, #000 100%)",
-    boxShadow: "20px 20px 60px rgba(0, 0, 0, 0.5), -20px -20px 60px rgba(255, 255, 255, 0.05)",
+    boxShadow: "2px 4px 4px rgba(0,0,0,0.45), inset 1px 1px 2px hsla(0,0%,100%,.15)",
     carousel: {
       opacity: 1,
       boxShadow: "-10px -10px 30px rgba(255, 255, 255, 0), 10px 10px 30px rgba(0, 0, 0, 1)"
@@ -23,8 +23,8 @@ export default {
       text: "#fff",
       background:  "#0f0f0f",
       boxShadow: {
-        primary: "-4px -4px 10px rgba(255, 255, 255, 0.08), 4px 4px 10px rgba(0, 0, 0, 0.5)",
-        secondary: "-4px -4px 10px rgba(255, 255, 255, 0.05), 4px 4px 10px rgba(0, 0, 0, 0.8)",
+        primary: "2px 4px 4px rgba(0,0,0,0.45), inset 1px 1px 2px hsla(0,0%,100%,.15)",
+        secondary: "2px 4px 4px rgba(0,0,0,0.45), inset 1px 1px 2px hsla(0,0%,100%,.15)",
         hover: "linear-gradient(145deg, rgba(0,0,0,0.66), rgba(255,255,255,0.2))"
       },
       hoverIntensity: 0.25
