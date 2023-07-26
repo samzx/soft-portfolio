@@ -96,7 +96,7 @@ export default {
     author: String,
     cta: String,
     subtitle: String,
-    description: String
+    description: Array
   }
 }
 </script>
