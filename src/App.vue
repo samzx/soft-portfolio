@@ -37,7 +37,10 @@
       </logo-section-container>
     </card-container>
     <foot v-bind:author="author" v-bind:footer="footer" />
-    <light-toggle v-on:click="toggleTheme()"><span v-if="!isDark" >💡</span><span v-if="isDark">💡</span></light-toggle>
+    <light-toggle v-on:click="toggleTheme()">
+      <span v-if="!isDark" ><i class="fas fa-adjust"></i></span>
+      <span v-if="isDark"><i class="fas fa-adjust"></i></span>
+    </light-toggle>
   </theme-provider>
 </template>
 
@@ -247,6 +250,14 @@ const LightToggle = styled.button`
   transform: translateY(0px);
   transition: 0.3s transform ease-out;
   cursor: pointer;
+
+  background: ${({theme}) => theme.card.background};
+  box-shadow: ${({theme}) => theme.card.boxShadow};
+  border-radius: 8px;
+  height: 50px;
+  width: 50px;
+  color: var(--main-color);
+
   &:hover {
     transform: translateY(-5px);
     transition: 0.2s transform ease-out;
