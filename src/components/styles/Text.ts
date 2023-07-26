@@ -21,7 +21,6 @@ export const MainTitle = styled.h1`
   font-size: 2.25rem;
   margin-top: 0px;
   margin-bottom: 8px;
-  opacity: 0.8;
 `
 
 const paragraphProps = { size: String}
