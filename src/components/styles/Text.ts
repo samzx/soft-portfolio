@@ -21,6 +21,8 @@ export const MainTitle = styled.h1`
   font-size: 2.25rem;
   margin-top: 0px;
   margin-bottom: 8px;
+  color: #000;
+  opacity: 0.8;
 `
 
 const paragraphProps = { size: String}
@@ -31,8 +33,9 @@ export const Paragraph = styled('p', paragraphProps)`
   font-weight: 400;
 `
 
-export const Subtitle = styled(Paragraph)`
+export const Subtitle = styled.h2`
   font-weight: 600;
+  font-size: 0.95rem;
 `
 
 export const ButtonText = styled.span`

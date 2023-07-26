@@ -156,6 +156,9 @@ injectGlobal`
   h1 {
     font-weight: 600;
   }
+  /* p {
+    color: #1d1d1f;
+  } */
 `
 
 const CardContainer = styled.div`

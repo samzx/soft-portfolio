@@ -1,7 +1,7 @@
 <template>
   <styled-a v-bind:href="url" target="_blank" v-bind:aria-label="alt">
     <card>
-        <logo v-bind:src="src" v-bind:alt="alt"></logo>
+      <logo v-bind:src="src" v-bind:alt="alt"></logo>
     </card>
   </styled-a>
 </template>

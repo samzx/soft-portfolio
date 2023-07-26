@@ -1,7 +1,7 @@
 export default {
   author: "Sam Xie",
   hero: {
-    subtitle: "Software engineer at Cash App.",
+    subtitle: "Software Engineer at Cash App.",
     description: ["Engineering large scale software by day.", "Launching boutique products by night."],
     cta: "Browse Products",
   },
@@ -10,7 +10,7 @@ export default {
       {
         name: "DoubleText",
         medium: "React · GraphQL · Golang",
-        summary: "The #1 Texting Analysis App.",
+        summary: "The #1 Texting Analysis App",
         copy: [
           "Learn from millions of your messages, without giving up your data or privacy."
         ],

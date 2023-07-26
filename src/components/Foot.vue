@@ -1,7 +1,7 @@
 <template>
   <app-footer>
     <div>
-      <author>{{footer.tagline}}</author>
+      <subtitle>{{footer.tagline}}</subtitle>
     </div>
     <icon-container>
       <icons v-for="(link, index) in footer.links" :key="`product-desctiption-${index}`" v-bind:href="link.url" target="_blank"><i v-bind:class="link.fa"></i></icons>
@@ -11,6 +11,7 @@
 
 <script>
 import styled from 'vue-styled-components'
+import { Subtitle } from './styles/Text.ts'
 
 const AppFooter = styled.div`
   width: ${({theme}) => theme.screen.width.desktop - theme.screen.padding.desktop * 2}px;
@@ -28,10 +29,6 @@ const AppFooter = styled.div`
   @media screen and (max-width: ${({theme}) => theme.screen.width.tablet}px) {
     width: ${({theme}) => theme.screen.width.mobile - theme.screen.padding.mobile * 2}px;
   }
-`
-
-const Author = styled.p`
-  margin-right: 36px;
 `
 
 const Icons = styled.a`
@@ -56,9 +53,9 @@ const IconContainer = styled.div`
 export default {
   components: {
     AppFooter,
-    Author,
     Icons,
-    IconContainer
+    IconContainer,
+    Subtitle
   },
   props: {
     footer: {
