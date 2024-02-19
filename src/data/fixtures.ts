@@ -98,7 +98,7 @@ export default {
   ]
   },
   footer: {
-    tagline: "Sam Xie — Melbourne, Australia",
+    tagline: "Sam Zhong Sheng Xie — Melbourne, Australia",
     links: [
       {
         name: "Twitter",
